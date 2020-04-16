@@ -31,7 +31,7 @@ class HomePage extends Component {
           <div className="flexRow">
             <code>
               {'<'}
-              <a href={global.isMobile ? resume : '/resume'} target="_blank" rel="noopener noreferrer">
+              <a href={global.isMobile ? resume : '/#/resume'} rel="noopener noreferrer">
                 Resume
               </a>
               {'/>'}
