@@ -128,12 +128,15 @@ class HomePage extends Component {
               </div>
             </div>
             <div className="after-spin">
+              <p className="text">Hi, and welcome to my website!</p>
+              <div className="m-5" />
               <p className="text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                deserunt mollit anim id est laborum.
+                My name is Ralfi, and I'm a <span className="coral">passionate</span> developer.
+              </p>
+              <div className="m-5" />
+              <p className="text">
+                I'm currently seeking for a full-time position. Please reach out for any mobile or front-end positions!
+                I am a great remote worker :)
               </p>
             </div>
           </div>
