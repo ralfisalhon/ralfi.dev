@@ -61,7 +61,7 @@ const projects = {
     color: '#2f2f2f',
     title: 'Your music discovery and playlist creation platform.',
     description: ['This took a really fun 4 months to make. But it started a lot simpler than that. Polyhack 2018'],
-    awards: ['Hubspot Special Award, Polyhack 2018'],
+    awards: ['HubSpot Engineering Values Award, Polyhack 2018'],
     platforms: {
       github: 'https://github.com/ralfisalhon/jamblr-polyhack2018',
       appstore: 'https://apps.apple.com/us/app/jamblr-discover-new-music/id1450608022',

@@ -36,7 +36,7 @@ class AlphabetRecord extends Component {
     const { num } = this.state;
     return (
       <div>
-        <p className="text fact-title">> I am the World's Fastest Smarthphone Typer</p>
+        <p className="text fact-title">> I am the World's Fastest Smartphone Typer</p>
         <div className="m-10" />
         <div className="PIContainer">
           <p className="PI">{ALPHABET.substr(0, num)}</p>

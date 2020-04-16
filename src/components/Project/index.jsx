@@ -4,7 +4,7 @@ import './styles.css';
 import PropTypes from 'prop-types';
 
 const platform_conversions = {
-  github: 'Github',
+  github: 'GitHub',
   playstore: 'Play Store',
   appstore: 'App Store',
   website: 'Website',
