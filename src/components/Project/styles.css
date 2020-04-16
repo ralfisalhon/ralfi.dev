@@ -1,0 +1,61 @@
+.catchPhraseContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 4vh 8vw 4vh 8vw;
+  border-radius: 20px;
+}
+
+.catchPhrase {
+  font-size: 64px;
+  margin-right: 100px;
+}
+
+.logo {
+  width: 18vh;
+  height: 18vh;
+}
+
+.whiteText {
+  color: white;
+}
+
+.verticalCenter {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  width: 100%;
+}
+
+.right {
+  margin-left: auto;
+}
+
+.screenshot {
+  width: calc(50vh * 0.562);
+  height: 50vh;
+  border-radius: 20px;
+  border: 1px solid lightgray;
+}
+
+.screenshot-wide {
+  width: calc(50vh * 0.562);
+  height: 60vh;
+  border-radius: 20px;
+  border: 1px solid lightgray;
+}
+
+.around {
+  justify-content: space-around !important;
+}
+
+.platforms {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.platform {
+  margin-right: 10px;
+  padding: 20px;
+  border-radius: 20px;
+}

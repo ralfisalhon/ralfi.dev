@@ -1,0 +1,42 @@
+.text {
+  font-size: 24px;
+}
+
+.PI {
+  color: coral;
+  margin: 0px;
+  padding: 0px;
+  word-break: break-all;
+  font-size: 32px;
+}
+
+.fonts {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.fontBox {
+  border-style: solid;
+  border-width: 0.05rem;
+  border-color: black;
+  padding: 10px 40px 10px 40px;
+  background-color: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-right: 2.5%;
+}
+
+.font {
+  font-size: 24px;
+}
+
+a {
+  color: black;
+  border-bottom: 1px solid coral; /* Or whatever color you want */
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+}
