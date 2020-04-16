@@ -15,7 +15,8 @@ import FunFactsPage from './screens/fun';
 import ScrollToTop from './scrollToTop';
 
 import projects from './data/projects';
-global.isMobile = window.innerWidth <= 1400;
+global.isMobile = window.innerWidth <= 1200;
+global.isSmaller = window.innerHeight <= 775;
 
 class App extends Component {
   render() {

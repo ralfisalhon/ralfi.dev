@@ -60,7 +60,7 @@
 .header {
   display: flex;
   width: 18%;
-  min-width: 100px;
+  min-width: 200px;
   min-height: 100vh;
   background-color: #181818;
   flex-direction: column;

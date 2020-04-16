@@ -5,8 +5,8 @@
 }
 
 .round_icon {
-  width: 100px;
-  height: 100px;
+  width: 5vw;
+  height: 5vw;
   -webkit-filter: drop-shadow(4px 4px 4px gray);
   filter: drop-shadow(4px 4px 4px gray);
   cursor: pointer;
@@ -37,14 +37,14 @@
 }
 
 .base {
-  border-radius: 27vw;
-  width: 54vw;
-  height: 54vw;
+  border-radius: 44vh;
+  width: 88vh;
+  height: 88vh;
   position: absolute;
   left: calc(50% + 5vw);
-  margin-left: -27vw;
+  margin-left: -44vh;
   top: 50%;
-  margin-top: -27vw;
+  margin-top: -44vh;
   /* border: 1px solid black; */
 
   -webkit-animation-name: spin;
