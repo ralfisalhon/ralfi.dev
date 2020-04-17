@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
-import resume from '../../assets/pdf/RRS_Resume_Mar_2020_V2.pdf';
+import resume from '../../assets/pdf/RRS_Resume_Apr_2020.pdf';
 import Line from '../../components/Line';
 import './AnnotationLayer.css';
 import './styles.css';

@@ -17,7 +17,7 @@ import YoutubeLogo from '../../assets/svg/youtube.svg';
 import GithubLogo from '../../assets/svg/github.svg';
 import SpotifyLogo from '../../assets/svg/spotify.svg';
 
-import resume from '../../assets/pdf/RRS_Resume_Mar_2020_V2.pdf';
+import resume from '../../assets/pdf/RRS_Resume_Apr_2020.pdf';
 
 class HomePage extends Component {
   render() {
