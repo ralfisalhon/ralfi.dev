@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.ad0e4e81.chunk.css",
+    "main.css": "/static/css/main.92006711.chunk.css",
     "main.js": "/static/js/main.bf991c71.chunk.js",
     "main.js.map": "/static/js/main.bf991c71.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.9008f3bb.js",
@@ -8,9 +8,9 @@
     "static/js/2.4864a043.chunk.js": "/static/js/2.4864a043.chunk.js",
     "static/js/2.4864a043.chunk.js.map": "/static/js/2.4864a043.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.eac5ae1ff13d5cfacabe5c3089340c8a.js": "/precache-manifest.eac5ae1ff13d5cfacabe5c3089340c8a.js",
+    "precache-manifest.9410cef6e3edffe1915c6802b5a82fe8.js": "/precache-manifest.9410cef6e3edffe1915c6802b5a82fe8.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.ad0e4e81.chunk.css.map": "/static/css/main.ad0e4e81.chunk.css.map",
+    "static/css/main.92006711.chunk.css.map": "/static/css/main.92006711.chunk.css.map",
     "static/js/2.4864a043.chunk.js.LICENSE.txt": "/static/js/2.4864a043.chunk.js.LICENSE.txt",
     "static/media/RRS_Resume_Apr_2020.pdf": "/static/media/RRS_Resume_Apr_2020.e0571902.pdf",
     "static/media/SS1.png": "/static/media/SS1.d938bb92.png",
@@ -39,7 +39,7 @@
   "entrypoints": [
     "static/js/runtime-main.9008f3bb.js",
     "static/js/2.4864a043.chunk.js",
-    "static/css/main.ad0e4e81.chunk.css",
+    "static/css/main.92006711.chunk.css",
     "static/js/main.bf991c71.chunk.js"
   ]
 }
