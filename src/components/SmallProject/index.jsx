@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 class SmallProject extends Component {
   render() {
     const { logo, name, title, techs } = this.props.project;
+    
     return (
       <div className="small-project">
         <img className="logo-small" src={logo} alt="logo" />
