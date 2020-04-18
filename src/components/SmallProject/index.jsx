@@ -14,8 +14,8 @@ class SmallProject extends Component {
             <h1 className="text big">{name}</h1>
             <p className="text">{title}</p>
           </div>
-          {/* <div className="m-20" /> */}
-          {/* <code className="smaller">{techs}</code> */}
+          <div className="m-10" />
+          <p className="text smaller">{techs}</p>
         </div>
       </div>
     );

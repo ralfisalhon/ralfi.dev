@@ -1,23 +1,15 @@
 .small-project {
   display: flex;
-  height: 10vw;
   width: 100%;
-  min-width: 300px;
-  min-height: 150px;
-  /* border: 1px solid black; */
-  margin-bottom: 20px;
   border-radius: 20px;
-  /* justify-content: space-evenly; */
   align-items: center;
   cursor: pointer;
-  /* box-shadow: 2px 2px 5px darkgrey; */
+  margin-bottom: 30px;
 }
 
 .logo-small {
-  width: 8vw;
-  height: 8vw;
-  min-width: 100px;
-  min-height: 100px;
+  width: 12vh !important;
+  height: 12vh !important;
 }
 
 .project-text {

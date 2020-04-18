@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import './styles.css';
 import Line from '../../components/Line';
+import { Link } from 'react-router-dom';
+
 class ProjectsPage extends Component {
   render() {
     return (
       <div>
-        <h1 className="cursor" onClick={() => (window.location.pathname = '/projects')}>
-          Projects
-        </h1>
+        <Link className="no-border" to={'/projects'}>
+          <h1 className="cursor">Projects</h1>
+        </Link>
         <div className="m-5" />
         <h3 className="subtitle">What I live to do</h3>
         <Line />
