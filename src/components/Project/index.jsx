@@ -34,7 +34,7 @@ class Project extends Component {
             {Object.keys(platforms).map((platform) => (
               <div
                 className="platform cursor"
-                style={{ backgroundColor: color }}
+                style={{ backgroundColor: color, marginRight: '10px' }}
                 onClick={() => window.open(platforms[platform], '_blank')}
               >
                 <p className="text whiteText">{platform_conversions[platform]}</p>
@@ -55,7 +55,7 @@ class Project extends Component {
           </div>
         )}
         <div>
-          {/* {Array.isArray(description) ? (
+          {Array.isArray(description) ? (
             description.map((desc) => (
               <div style={{ marginBottom: '10px' }}>
                 <p className="text">{desc}</p>
@@ -63,9 +63,9 @@ class Project extends Component {
             ))
           ) : (
             <p className="text">{description}</p>
-          )} */}
+          )}
           <center>
-            {/* <div className="m-20" /> */}
+            {description && <div className="m-20" />}
             <div className="row around">
               {screenshots &&
                 screenshots.map((screenshot) => (
