@@ -18,12 +18,12 @@ class Project extends Component {
         <div className="catchPhraseContainer" style={{ backgroundColor: color }}>
           <div className="flexRow">
             <div className="verticalCenter">
-              <h1 className="catchPhrase whiteText">{title}</h1>
+              <h1 className="catchPhrase white">{title}</h1>
               <div className="m-20" />
               <center className="right">
                 <img className="logo" src={logo} alt="logo" />
                 <div className="m-10" />
-                <h1 className="text whiteText">{name}</h1>
+                <h1 className="text white">{name}</h1>
               </center>
             </div>
           </div>
@@ -37,14 +37,14 @@ class Project extends Component {
                 style={{ backgroundColor: color, marginRight: '10px' }}
                 onClick={() => window.open(platforms[platform], '_blank')}
               >
-                <p className="text whiteText">{platform_conversions[platform]}</p>
+                <p className="text white">{platform_conversions[platform]}</p>
               </div>
             ))}
             {awards && (
               <div className="awards right">
                 {awards.map((award) => (
                   <div className="platform" style={{ backgroundColor: color }}>
-                    <p className="text whiteText">
+                    <p className="text white">
                       {'🏆 '}
                       {award}
                     </p>

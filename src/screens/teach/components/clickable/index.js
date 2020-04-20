@@ -4,48 +4,32 @@ import './clickable.css';
 import PropTypes from 'prop-types';
 
 class Clickable extends Component {
-  getButtonStyle = (filled, color) => {
-    return {
-      border: '2px solid ' + color,
-      borderRadius: '10px',
-      padding: '6px 24px 6px 24px',
-      outline: 'none',
-      backgroundColor: filled ? color : 'white',
-      cursor: 'pointer',
-      boxShadow: '1px 1px 1px lightgray',
-    };
-  };
-
-  getTextStyle = (filled, color) => {
-    return {
-      color: filled ? 'white' : color,
-      fontWeight: '600',
-      outline: 'none',
-    };
-  };
-
   render() {
-    const {
-      text, onClick, filled, color,
-    } = this.props;
+    const { text, filled, color: backgroundColor, press } = this.props;
     return (
-      <span className="disable-selection" role="button" tabIndex={0} onClick={onClick} style={this.getButtonStyle(filled, color)}>
-        <span style={this.getTextStyle(filled, color)}>{text}</span>
-      </span>
+      <div
+        className="button disable-selection"
+        style={filled ? { backgroundColor } : null}
+        onClick={press}
+        {...this.props}
+      >
+        <h1 className={filled ? 'text white' : 'text'}>{text}</h1>
+      </div>
     );
   }
 }
 
 Clickable.propTypes = {
   text: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
   filled: PropTypes.bool,
   color: PropTypes.string,
+  press: PropTypes.func,
 };
 
 Clickable.defaultProps = {
+  text: 'Clickable',
   filled: false,
-  color: '#bb4731',
+  color: 'var(--dark-color)',
 };
 
 export default Clickable;

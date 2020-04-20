@@ -3,6 +3,11 @@
   margin: 0px;
 }
 
+:root {
+  --dark-color: #181818;
+  --light-color: #f2f2f2;
+}
+
 .m-20 {
   height: 20px;
 }
@@ -70,14 +75,14 @@
   width: 18%;
   min-width: 200px;
   min-height: 100vh;
-  background-color: #181818;
+  background-color: var(--dark-color);
   flex-direction: column;
 }
 
 .content {
   min-height: calc(100vh - 100);
   width: 100vw;
-  background-color: #f2f2f2;
+  background-color: var(--light-color);
   padding: 50px 50px 50px 50px;
   /* overflow: hidden; */
 }
@@ -86,7 +91,7 @@
   height: auto;
   width: 100%;
   padding: 0px 50px 0px 50px;
-  background-color: #f2f2f2;
+  background-color: var(--light-color);
   overflow: hidden;
 }
 

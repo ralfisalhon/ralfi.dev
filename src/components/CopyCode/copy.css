@@ -1,0 +1,10 @@
+.copy-options {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.copy-option:hover {
+  font-weight: bold !important;
+}
