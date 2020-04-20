@@ -1,9 +1,5 @@
 # https://ralfi.dev
 
-by Ralfi Salhon&nbsp;currently, and always, in progress.
-
-##
-
 ### Localhost
 
 ```sh
