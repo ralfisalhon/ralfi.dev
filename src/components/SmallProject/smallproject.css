@@ -13,8 +13,10 @@
 }
 
 .logo-small {
-  width: 12vh !important;
-  height: 12vh !important;
+  width: 12vh;
+  height: 12vh;
+  min-height: 125px;
+  min-width: 125px;
 }
 
 .project-text {
