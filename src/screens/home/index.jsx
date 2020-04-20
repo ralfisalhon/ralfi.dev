@@ -24,9 +24,9 @@ class HomePage extends Component {
     return (
       <div className="homeBody fade-in">
         <div className={global.isMobile ? 'centertext-mobile' : 'centertext'}>
-          <h1 className={global.isSmaller && !global.isMobile ? 'text small' : 'text'}>Hi, my name is Ralfi.</h1>
+          <h1 className={global.isSmaller && !global.isMobile ? 'text center-small' : 'text'}>Hi, my name is Ralfi.</h1>
           <div className="m-5" />
-          <p className={global.isSmaller && !global.isMobile ? 'text small' : 'text'}>
+          <p className={global.isSmaller && !global.isMobile ? 'text center-small' : 'text'}>
             I develop great looking mobile & web apps.
           </p>
           <div className="m-10" />
