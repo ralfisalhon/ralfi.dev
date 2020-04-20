@@ -12,7 +12,7 @@ import ProjectsPage from './screens/projects';
 import TeachingPage from './screens/teach';
 import FunFactsPage from './screens/fun';
 
-import ScrollToTop from './scrollToTop';
+import ScrollToTop from './assets/js/scrollToTop';
 
 import projects from './data/projects';
 global.isMobile = window.innerWidth <= 1200;
