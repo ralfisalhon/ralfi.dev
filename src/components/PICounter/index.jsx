@@ -26,10 +26,6 @@ class PICounter extends Component {
     }, fontSpeed);
   };
 
-  componentDidMount() {
-    // this.piTimer();
-  }
-
   render() {
     const { num } = this.state;
     return (

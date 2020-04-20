@@ -19,7 +19,7 @@ class FunFactsPage extends Component {
         <div className="m-10" />
         <p>
           Here, listen to baby me play when I was <a href="https://www.youtube.com/watch?v=bTn22GQevjw">9 years</a> old,{' '}
-          <a href="https://www.youtube.com/watch?v=X9Gy6ZulfNc">15 years</a> old. I mostly do classical nowadays.
+          <a href="https://www.youtube.com/watch?v=X9Gy6ZulfNc">14 years</a> old. I mostly do classical nowadays.
         </p>
       </div>
     );
