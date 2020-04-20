@@ -36,9 +36,9 @@ class Header extends Component {
             <Link className="text header-text" to="/projects">
               Projects
             </Link>
-            <Link className="text header-text" to="/teach">
+            {/* <Link className="text header-text" to="/teach">
               Teaching Material
-            </Link>
+            </Link> */}
             <Link className="text header-text" to="/fun">
               Fun Facts
             </Link>
