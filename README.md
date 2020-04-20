@@ -1,2 +1,4 @@
-_React-Template_ \
-made by Ralfi Salhon
+# https://ralfi.dev
+
+by Ralfi Salhon \
+currently, and always, in progress.
