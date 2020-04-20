@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { Component } from 'react';
-import './styles.css';
+import './line.css';
 
 class Line extends Component {
   render() {

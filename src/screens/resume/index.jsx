@@ -3,7 +3,7 @@ import { Document, Page, pdfjs } from 'react-pdf';
 import resume from '../../assets/pdf/RRS_Resume_Apr_2020.pdf';
 import Line from '../../components/Line';
 import './AnnotationLayer.css';
-import './styles.css';
+import './resume.css';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 function removeTextLayerOffset() {

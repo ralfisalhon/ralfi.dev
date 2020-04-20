@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { Component } from 'react';
-import './styles.css';
+import './smallproject.css';
 import PropTypes from 'prop-types';
 
 class SmallProject extends Component {

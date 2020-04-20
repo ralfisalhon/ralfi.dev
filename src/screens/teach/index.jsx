@@ -10,6 +10,7 @@ class TeachingPage extends Component {
         <div className="m-5" />
         <h3 className="subtitle">This page is in progress...</h3>
         <Line />
+        <h2 className="text">React Components</h2>
       </div>
     );
   }

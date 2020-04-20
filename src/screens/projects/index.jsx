@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './styles.css';
+import './projects.css';
 import Line from '../../components/Line';
 import { Link } from 'react-router-dom';
 

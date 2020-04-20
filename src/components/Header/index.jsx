@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { Component } from 'react';
-import './styles.css';
+import './header.css';
 import { Link } from 'react-router-dom';
 
 import avatar from '../../assets/images/avatar.jpg';

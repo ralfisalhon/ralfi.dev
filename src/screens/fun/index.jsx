@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './styles.css';
+import './fun.css';
 import PICounter from '../../components/PICounter';
 import AlphabetRecord from '../../components/AlphabetRecord';
 import Line from '../../components/Line';
