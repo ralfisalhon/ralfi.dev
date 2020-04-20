@@ -8,6 +8,10 @@
   cursor: pointer;
 }
 
+.button:hover {
+  background-color: white;
+}
+
 .disable-selection {
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* Internet Explorer */
