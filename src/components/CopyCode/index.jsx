@@ -10,18 +10,30 @@ class CopyCode extends Component {
     };
   }
 
-  copyClipboard = () => {
+  copyClipboard = (lang) => {
+    navigator.clipboard.writeText(this.props[lang]);
     this.setState({ copying: true });
+    setTimeout(() => {
+      this.setState({ copying: false });
+    }, 750);
   };
 
   render() {
+    const { copying } = this.state;
     return (
-      <div className="copy-options">
-        <p className="text smaller copy-option" onClick={() => this.copyClipboard()}>
-          HTML
-        </p>
-        <div className="m-5" />
-        <p className="text smaller copy-option">CSS</p>
+      <div className="row">
+        <div className="copy-options">
+          <p
+            className={copying ? 'text smaller disable-selection' : 'text smaller copy-option'}
+            onClick={() => this.copyClipboard('HTML')}
+          >
+            {copying ? 'Copied!' : 'HTML'}
+          </p>
+          <div className="m-5" />
+          <p className="text smaller copy-option" onClick={() => this.copyClipboard('CSS')}>
+            {!copying && 'CSS'}
+          </p>
+        </div>
       </div>
     );
   }

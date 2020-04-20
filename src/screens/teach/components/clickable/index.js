@@ -5,11 +5,11 @@ import PropTypes from 'prop-types';
 
 class Clickable extends Component {
   render() {
-    const { text, filled, color: backgroundColor, press } = this.props;
+    const { text, filled, color, press } = this.props;
     return (
       <div
         className="button disable-selection"
-        style={filled ? { backgroundColor } : null}
+        style={filled ? { backgroundColor: color, borderColor: color } : null}
         onClick={press}
         {...this.props}
       >

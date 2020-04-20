@@ -1,8 +1,11 @@
 .copy-options {
   display: flex;
   flex-direction: column;
-  cursor: pointer;
   transition: 1s;
+}
+
+.copy-option {
+  cursor: pointer;
 }
 
 .copy-option:hover {

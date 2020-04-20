@@ -5,6 +5,7 @@
   padding: 5px 10px;
   transition: 300ms;
   height: 100%;
+  cursor: pointer;
 }
 
 .disable-selection {

@@ -15,10 +15,16 @@ class TeachingPage extends Component {
         <Line />
         <h2 className="text">React Components</h2>
         <div className="m-20" />
-        <div className="container">
-          <Clickable />
-          <div className="m-20-left" />
-          <CopyCode />
+        <div>
+          <div className="container">
+            <Clickable />
+            <div className="m-20-left" />
+            <CopyCode HTML={'Test Copy HTML'} CSS={'Test Copy CSS'} />
+          </div>
+          <div className="m-10" />
+          <div className="container">
+            <Clickable filled color="coral" />
+          </div>
         </div>
       </div>
     );
