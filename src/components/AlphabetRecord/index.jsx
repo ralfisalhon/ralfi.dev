@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import './alphabet.css';
 
 const ALPHABET = 'abcdefghijklmnopqrstuvwxyz';
-
 class AlphabetRecord extends Component {
   constructor() {
     super();
@@ -13,16 +12,21 @@ class AlphabetRecord extends Component {
     };
   }
 
+  componentWillUnmount() {
+    clearTimeout(this.timerHandle);
+    clearTimeout(this.restartTimer);
+  }
+
   alphabetTimer = () => {
     let { fontSpeed, num } = this.state;
     if (num > ALPHABET.length) {
-      setTimeout(() => {
+      this.restartTimer = setTimeout(() => {
         this.setState({ num: 1 });
         this.alphabetTimer();
       }, 3000);
       return;
     }
-    setTimeout(() => {
+    this.timerHandle = setTimeout(() => {
       this.setState({ num: num + 1 });
       this.alphabetTimer();
     }, fontSpeed);
@@ -49,8 +53,8 @@ class AlphabetRecord extends Component {
           width="560"
           height="315"
           src="https://www.youtube-nocookie.com/embed/Mo094dNblBc"
-          frameborder="0"
-          allowfullscreen="allowfullscreen"
+          frameBorder="0"
+          allowFullScreen="allowfullscreen"
         />
       </div>
     );

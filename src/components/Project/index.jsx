@@ -33,6 +33,7 @@ class Project extends Component {
           <div className="platforms">
             {Object.keys(platforms).map((platform) => (
               <div
+                key={platform}
                 className="platform cursor"
                 style={{ backgroundColor: color, marginRight: '10px' }}
                 onClick={() => window.open(platforms[platform], '_blank')}
@@ -43,7 +44,7 @@ class Project extends Component {
             {awards && (
               <div className="awards right">
                 {awards.map((award) => (
-                  <div className="platform" style={{ backgroundColor: color }}>
+                  <div className="platform" style={{ backgroundColor: color }} key={award}>
                     <p className="text white">
                       {'🏆 '}
                       {award}
@@ -57,7 +58,7 @@ class Project extends Component {
         <div>
           {Array.isArray(description) ? (
             description.map((desc) => (
-              <div style={{ marginBottom: '10px' }}>
+              <div style={{ marginBottom: '10px' }} key={desc}>
                 <p className="text">{desc}</p>
               </div>
             ))
@@ -70,6 +71,7 @@ class Project extends Component {
               {screenshots &&
                 screenshots.map((screenshot) => (
                   <img
+                    key={screenshot}
                     className={wideSS ? 'screenshot-wide' : 'screenshot'}
                     alt="project screenshot"
                     src={screenshot}
@@ -84,7 +86,7 @@ class Project extends Component {
                   width={window.innerWidth * 0.6}
                   height={window.innerWidth * 0.6 * 0.56}
                   src={video}
-                  frameborder="0"
+                  frameBorder="0"
                 />
               </div>
             )}

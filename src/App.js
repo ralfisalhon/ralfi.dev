@@ -1,7 +1,7 @@
 import './App.css';
 
-import React, { Component } from 'react';
-import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { HashRouter as Router, Switch, Route, Link, useHistory } from 'react-router-dom';
 import Header from './components/Header';
 import Project from './components/Project';
 import SmallProject from './components/SmallProject';
@@ -18,12 +18,12 @@ import projects from './data/projects';
 global.isMobile = window.innerWidth <= 1200 || window.innerHeight < 600;
 global.isSmaller = window.innerHeight <= 775;
 
-class App extends Component {
-  render() {
-    return (
-      <Router>
-        <ScrollToTop />
-        <Switch>
+export default function App() {
+  return (
+    <Router>
+      <ScrollToTop />
+      <Switch>
+        <React.Fragment>
           <div className="full-page">
             {!global.isMobile && (
               <div className="header">
@@ -36,7 +36,7 @@ class App extends Component {
               <Route path="/projects">
                 <ProjectsPage />
                 {Object.keys(projects).map((key) => (
-                  <Route path={'/projects/' + key}>
+                  <Route path={'/projects/' + key} key={key}>
                     <Project project={projects[key]} />
                   </Route>
                 ))}
@@ -44,7 +44,7 @@ class App extends Component {
               <Route exact path="/projects">
                 <div className="all-projects">
                   {Object.keys(projects).map((key) => (
-                    <Link className="no-border" to={'/projects/' + key}>
+                    <Link className="no-border" to={'/projects/' + key} key={key}>
                       <SmallProject project={projects[key]} />
                     </Link>
                   ))}
@@ -54,10 +54,8 @@ class App extends Component {
               <Route exact path="/fun" component={FunFactsPage} />
             </div>
           </div>
-        </Switch>
-      </Router>
-    );
-  }
+        </React.Fragment>
+      </Switch>
+    </Router>
+  );
 }
-
-export default App;

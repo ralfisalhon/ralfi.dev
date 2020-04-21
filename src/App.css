@@ -53,8 +53,8 @@
 }
 
 .header-text-selected {
-  color: coral !important;
-  font-size: 34px !important;
+  font-weight: bold !important;
+  border-bottom: 1px solid coral;
 }
 
 .subtitle {
