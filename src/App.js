@@ -1,7 +1,7 @@
 import './App.css';
 
-import React, { useEffect } from 'react';
-import { HashRouter as Router, Switch, Route, Link, useHistory } from 'react-router-dom';
+import React from 'react';
+import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Header from './components/Header';
 import Project from './components/Project';
 import SmallProject from './components/SmallProject';
@@ -9,7 +9,7 @@ import SmallProject from './components/SmallProject';
 import HomePage from './screens/home';
 import ResumePage from './screens/resume';
 import ProjectsPage from './screens/projects';
-import TeachingPage from './screens/teach';
+import PlaygroundPage from './screens/playground';
 import FunFactsPage from './screens/fun';
 
 import ScrollToTop from './assets/js/scrollToTop';
@@ -50,7 +50,7 @@ export default function App() {
                   ))}
                 </div>
               </Route>
-              <Route exact path="/teach" component={TeachingPage} />
+              <Route exact path="/playground" component={PlaygroundPage} />
               <Route exact path="/fun" component={FunFactsPage} />
             </div>
           </div>
