@@ -43,8 +43,3 @@
 .servicenow-table .completed {
   background-color: green;
 }
-
-.um {
-  display: flex;
-  flex-direction: row;
-}
