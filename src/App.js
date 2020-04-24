@@ -11,6 +11,7 @@ import ResumePage from './screens/resume';
 import ProjectsPage from './screens/projects';
 import PlaygroundPage from './screens/playground';
 import FunFactsPage from './screens/fun';
+import ServiceNowPage from './screens/servicenow';
 
 import ScrollToTop from './assets/js/scrollToTop';
 
@@ -52,6 +53,7 @@ export default function App() {
               </Route>
               <Route exact path="/playground" component={PlaygroundPage} />
               <Route exact path="/fun" component={FunFactsPage} />
+              <Route exact path="/servicenow" component={ServiceNowPage} />
             </div>
           </div>
         </React.Fragment>

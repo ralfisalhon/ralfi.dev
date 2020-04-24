@@ -1,0 +1,45 @@
+.servicenow-table {
+  text-align: center;
+  font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  border: 3px solid #ddd;
+  width: 100%;
+}
+
+.servicenow-table td,
+.servicenow-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.servicenow-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.servicenow-table tr:hover {
+  background-color: aliceblue;
+}
+
+.servicenow-table th {
+  padding: 14px 0px;
+  text-align: center;
+  background-color: cadetblue;
+  color: white;
+}
+
+.servicenow-table .box-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.servicenow-table .box {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 3px;
+}
+
+.servicenow-table .completed {
+  background-color: green;
+}
