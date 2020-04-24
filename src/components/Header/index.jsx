@@ -52,13 +52,13 @@ export default function Header() {
           >
             Work Experience
           </Link> */}
-          <Link
+          {/* <Link
             className={url === '/playground' ? 'text header-text header-text-selected' : 'text header-text'}
             to="/playground"
             onClick={() => setUrl('/playground')}
           >
             Playground
-          </Link>
+          </Link> */}
           <Link
             className={url === '/fun' ? 'text header-text header-text-selected' : 'text header-text'}
             to="/fun"
