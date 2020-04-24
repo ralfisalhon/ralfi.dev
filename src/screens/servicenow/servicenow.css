@@ -43,3 +43,19 @@
 .servicenow-table .completed {
   background-color: green;
 }
+
+.servicenow-table .row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.servicenow-table .sort {
+  width: 15px;
+  height: 15px;
+  border-radius: 5px;
+  margin-left: 20px;
+  background-color: cyan;
+  cursor: pointer;
+}
