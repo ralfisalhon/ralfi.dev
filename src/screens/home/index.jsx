@@ -137,8 +137,9 @@ class HomePage extends Component {
               </p>
               <div className="m-5" />
               <p className="text">
-                I'm currently seeking for a full-time position. Please reach out for any mobile or front-end positions!
-                I am a great remote worker :)
+                I'm currently seeking for a full-time position. I care most about becoming the best developer I can be,
+                and to work with great engineers who I can learn something new from every day. Feel free to reach out
+                for mobile or front-end positions!
               </p>
             </div>
           </div>
