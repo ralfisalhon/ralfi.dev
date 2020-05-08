@@ -1,41 +1,49 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { Component } from 'react';
-import './clickable.css';
+import './maze.css';
 import PropTypes from 'prop-types';
 const squareSize = 20;
 
+const Square = {
+  borders: [true, true, true, true],
+  position: [0, 0],
+  visited: false,
+  text: '.',
+};
+
 class Maze extends Component {
-  printMaze = (squares) => {
-    let returned = [];
-    for (let i = 0; i < squares.length; i++) {
+  printMaze = (arr) => {
+    if (!arr || arr.length === 0) return;
+    let render = [];
+    for (let i = 0; i < arr.length; i++) {
       let row = [];
-      console.log('square is', squares[i]);
-      for (let j = 0; j < squares[i].length; j++) {
-        row.push(<h1>HEY</h1>);
-        console.log('inside is', squares[i][j]);
+      for (let j = 0; j < arr[i].length; j++) {
+        let item = arr[i][j];
+        let className = 'cell ';
+        className += item.borders[0] ? 'up ' : '';
+        className += item.borders[1] ? 'right ' : '';
+        className += item.borders[2] ? 'down ' : '';
+        className += item.borders[3] ? 'left ' : '';
+
+        console.log(item.borders, i, j);
+        row.push(<div className={className}>{item.text}</div>);
       }
-      returned.push(row);
+      render.push(<div className="row">{row}</div>);
     }
 
-    console.log(returned);
+    return render;
+  };
 
-    return (
-      <div>
-        {returned.map((item) => (
-          <div style={{ display: 'flex', flexDirection: 'row' }}>
-            {item.map((i) => (
-              <div
-                style={{
-                  height: squareSize + 'px',
-                  width: squareSize + 'px',
-                  border: i != null ? '1px solid black' : '1px solid red',
-                }}
-              ></div>
-            ))}
-          </div>
-        ))}
-      </div>
-    );
+  make2DArray = (width, height) => {
+    let arr = new Array(height);
+    for (var i = 0; i < arr.length; i++) {
+      arr[i] = new Array(width);
+      for (let j = 0; j < arr[i].length; j++) {
+        arr[i][j] = Square;
+      }
+    }
+
+    return arr;
   };
 
   render() {
@@ -43,12 +51,8 @@ class Maze extends Component {
     const numSquaresWide = (width / squareSize) | 0;
     const numSquaresTall = (height / squareSize) | 0;
     console.log(numSquaresWide, numSquaresTall);
-    let squares = new Array(numSquaresTall);
-    for (var i = 0; i < squares.length; i++) {
-      squares[i] = new Array(numSquaresWide);
-    }
+    let squares = this.make2DArray(numSquaresWide, numSquaresTall);
 
-    squares[10][10] = true;
     console.log('AFTER true', squares);
     return (
       <div>
