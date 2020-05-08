@@ -14,17 +14,16 @@ export default function PlaygroundPage() {
       <div className="m-5" />
       <h3 className="subtitle">This page is me having fun</h3>
       <Line />
-      <h2 className="text">React Components</h2>
+      {/* <h2 className="text">React Components</h2> */}
       <div className="m-20" />
       <div>
-        <div className="playground-container">
+        {/* <div className="playground-container">
           <Clickable filled={fill} onClick={() => setFill(!fill)} color="coral" />
           <div className="m-20-left" />
-          {/* <CopyCode HTML={'Test Copy HTML'} CSS={'Test Copy CSS'} /> */}
-        </div>
-        <div className="playground-container">
+        </div> */}
+        {/* <div className="playground-container">
           <NavBar title="ralfi.dev" routes={['Home', 'Resume', 'Projects', 'Playground', 'Fun Facts']} />
-        </div>
+        </div> */}
         <Maze height={window.innerHeight / 2} width={window.innerWidth / 2} />
       </div>
     </div>

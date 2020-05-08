@@ -25,7 +25,6 @@ class Maze extends Component {
         className += item.borders[2] ? 'down ' : '';
         className += item.borders[3] ? 'left ' : '';
 
-        console.log(item.borders, i, j);
         row.push(<div className={className}>{item.text}</div>);
       }
       render.push(<div className="row">{row}</div>);
