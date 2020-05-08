@@ -3,7 +3,7 @@ import './styles.css';
 import Line from '../../components/Line';
 
 import Clickable from './components/Clickable';
-// import CopyCode from '../../components/CopyCode';
+import Maze from './components/Maze';
 import NavBar from './components/NavBar';
 
 export default function PlaygroundPage() {
@@ -25,6 +25,7 @@ export default function PlaygroundPage() {
         <div className="playground-container">
           <NavBar title="ralfi.dev" routes={['Home', 'Resume', 'Projects', 'Playground', 'Fun Facts']} />
         </div>
+        <Maze height={window.innerHeight / 2} width={window.innerWidth / 2} />
       </div>
     </div>
   );
