@@ -23,7 +23,7 @@ class ResumePage extends Component {
       <div className="resume-page">
         <h1>My Resume</h1>
         <div className="m-5" />
-        <h3 className="subtitle">Last updated: April 2020</h3>
+        <h3 className="subtitle">Last updated: May 2020</h3>
         <Line />
         <div style={{ height: resumeHeight, overflow: 'hidden' }}>
           <Document file={resume}>

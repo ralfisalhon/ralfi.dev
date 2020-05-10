@@ -9,10 +9,11 @@
   justify-content: center;
   align-items: center;
   margin: 0px;
+  /* important don't touch border color */
   border: 3px solid var(--light-color);
-  background-color: var(--dark-color);
-  /* border-radius: 0px; */
-  transition: 100ms;
+  border-radius: 100px;
+  opacity: 0.1;
+  margin: 1px;
 }
 
 .cell:hover {
@@ -21,6 +22,8 @@
 }
 
 .visited {
+  transition: 250ms;
+  opacity: 1;
   background-color: var(--light-color);
 }
 

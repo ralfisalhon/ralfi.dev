@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './maze.css';
-const squareSize = 50;
+const squareSize = 30;
 const timeoutWait = 50;
-let cellBorder = 0;
 let visited = [];
 
 export default function Maze(props) {
@@ -34,7 +33,6 @@ export default function Maze(props) {
   }
 
   function makeMaze(arr) {
-    cellBorder = (cellBorder + 1) % 25;
     if (!arr || arr.length === 0) return;
     let render = [];
     for (let i = 0; i < arr.length; i++) {
@@ -49,11 +47,7 @@ export default function Maze(props) {
         className += item.visited ? 'visited ' : '';
 
         row.push(
-          <div
-            key={j}
-            className={className}
-            style={{ height: squareSize, width: squareSize, borderRadius: cellBorder.toString() + 'px' }}
-          >
+          <div key={j} className={className} style={{ height: squareSize, width: squareSize }}>
             {item.text}
           </div>
         );
@@ -108,35 +102,30 @@ export default function Maze(props) {
       visited.push([i, j]);
     }
 
+    setMaze(makeMaze(squares));
+
     let direction = directions[Math.floor(Math.random() * directions.length)];
 
     if (direction === 'down') {
       squares[i][j].borders[2] = false;
       squares[i + 1][j].borders[0] = false;
-      setMaze(makeMaze(squares));
+
       setTimeout(() => createMaze(i + 1, j), timeoutWait);
-      return;
     }
     if (direction === 'up') {
       squares[i][j].borders[0] = false;
       squares[i - 1][j].borders[2] = false;
-      setMaze(makeMaze(squares));
       setTimeout(() => createMaze(i - 1, j), timeoutWait);
-      return;
     }
     if (direction === 'right') {
       squares[i][j].borders[1] = false;
       squares[i][j + 1].borders[3] = false;
-      setMaze(makeMaze(squares));
       setTimeout(() => createMaze(i, j + 1), timeoutWait);
-      return;
     }
     if (direction === 'left') {
       squares[i][j].borders[3] = false;
       squares[i][j - 1].borders[1] = false;
-      setMaze(makeMaze(squares));
       setTimeout(() => createMaze(i, j - 1), timeoutWait);
-      return;
     }
   }
 

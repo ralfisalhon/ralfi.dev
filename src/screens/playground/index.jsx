@@ -12,7 +12,9 @@ export default function PlaygroundPage() {
     <div>
       <h1>Playground</h1>
       <div className="m-5" />
-      <h3 className="subtitle">This page is me having fun</h3>
+      <h3 className="subtitle">
+        This page is me having fun. It's always updated with new stuff I'm experimenting with.
+      </h3>
       <Line />
       {/* <h2 className="text">React Components</h2> */}
       <div className="m-20" />
@@ -21,10 +23,10 @@ export default function PlaygroundPage() {
           <Clickable filled={fill} onClick={() => setFill(!fill)} color="coral" />
           <div className="m-20-left" />
         </div> */}
-        {/* <div className="playground-container">
+        <div className="playground-container">
           <NavBar title="ralfi.dev" routes={['Home', 'Resume', 'Projects', 'Playground', 'Fun Facts']} />
-        </div> */}
-        <Maze height={window.innerHeight / 1.5} width={window.innerWidth / 1.5} />
+        </div>
+        <Maze height={window.innerHeight * 0.55} width={window.innerWidth * 0.55} />
       </div>
     </div>
   );
