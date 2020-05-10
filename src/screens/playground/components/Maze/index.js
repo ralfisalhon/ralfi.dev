@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './maze.css';
-const squareSize = 25;
-const timeoutWait = 5;
+const squareSize = 50;
+const timeoutWait = 10;
 let visited = [];
 
 export default function Maze(props) {
@@ -44,6 +44,7 @@ export default function Maze(props) {
         className += item.borders[1] ? 'right ' : '';
         className += item.borders[2] ? 'down ' : '';
         className += item.borders[3] ? 'left ' : '';
+        className += item.visited ? 'visited ' : '';
 
         row.push(
           <div key={j} className={className} style={{ height: squareSize, width: squareSize }}>
@@ -83,14 +84,15 @@ export default function Maze(props) {
     let directions = getAvailableDirections(i, j);
     squares[i][j].visited = true;
 
-    if (directions.length === 0) {
+    if (directions.length === 0 || (i === 0 && j === numSquaresWide - 1)) {
       if (visited.length === 0) {
+        setMaze(makeMaze(squares));
         console.log('DONE!');
         return;
       }
+      // let goto = visited.pop();
       let goto = visited.shift();
-      setMaze(makeMaze(squares));
-      setTimeout(() => createMaze(goto[0], goto[1]), timeoutWait);
+      createMaze(goto[0], goto[1]);
       return;
     }
 
