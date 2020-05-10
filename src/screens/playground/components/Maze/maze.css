@@ -9,7 +9,7 @@
   justify-content: center;
   align-items: center;
   margin: 0px;
-  border: 1px solid var(--light-color);
+  border: 2px solid var(--light-color);
 }
 
 /* .cell:hover {

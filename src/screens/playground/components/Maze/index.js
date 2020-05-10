@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './maze.css';
-const squareSize = 50;
+const squareSize = 25;
+const timeoutWait = 5;
+let visited = [];
 
 export default function Maze(props) {
   const { height, width } = props;
@@ -79,9 +81,53 @@ export default function Maze(props) {
 
   function createMaze(i, j) {
     let directions = getAvailableDirections(i, j);
-    console.log('directions are', directions);
-    squares[i][j].text = 'LOL';
-    setMaze(makeMaze(squares));
+    squares[i][j].visited = true;
+
+    if (directions.length === 0) {
+      if (visited.length === 0) {
+        console.log('DONE!');
+        return;
+      }
+      let goto = visited.shift();
+      setMaze(makeMaze(squares));
+      setTimeout(() => createMaze(goto[0], goto[1]), timeoutWait);
+      return;
+    }
+
+    if (directions.length > 1) {
+      visited.push([i, j]);
+    }
+
+    let direction = directions[Math.floor(Math.random() * directions.length)];
+
+    if (direction === 'down') {
+      squares[i][j].borders[2] = false;
+      squares[i + 1][j].borders[0] = false;
+      setMaze(makeMaze(squares));
+      setTimeout(() => createMaze(i + 1, j), timeoutWait);
+      return;
+    }
+    if (direction === 'up') {
+      squares[i][j].borders[0] = false;
+      squares[i - 1][j].borders[2] = false;
+      setMaze(makeMaze(squares));
+      setTimeout(() => createMaze(i - 1, j), timeoutWait);
+      return;
+    }
+    if (direction === 'right') {
+      squares[i][j].borders[1] = false;
+      squares[i][j + 1].borders[3] = false;
+      setMaze(makeMaze(squares));
+      setTimeout(() => createMaze(i, j + 1), timeoutWait);
+      return;
+    }
+    if (direction === 'left') {
+      squares[i][j].borders[3] = false;
+      squares[i][j - 1].borders[1] = false;
+      setMaze(makeMaze(squares));
+      setTimeout(() => createMaze(i, j - 1), timeoutWait);
+      return;
+    }
   }
 
   return maze;
