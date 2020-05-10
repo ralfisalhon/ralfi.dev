@@ -24,7 +24,7 @@ export default function PlaygroundPage() {
         {/* <div className="playground-container">
           <NavBar title="ralfi.dev" routes={['Home', 'Resume', 'Projects', 'Playground', 'Fun Facts']} />
         </div> */}
-        <Maze height={window.innerHeight / 2} width={window.innerWidth / 2} />
+        <Maze height={window.innerHeight / 1.5} width={window.innerWidth / 1.5} />
       </div>
     </div>
   );
