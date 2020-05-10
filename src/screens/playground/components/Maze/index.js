@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './maze.css';
 const squareSize = 50;
-const timeoutWait = 10;
+const timeoutWait = 50;
+let cellBorder = 0;
 let visited = [];
 
 export default function Maze(props) {
@@ -12,7 +13,7 @@ export default function Maze(props) {
   const [maze, setMaze] = useState(makeMaze(squares));
 
   useEffect(() => {
-    createMaze(0, 0);
+    createMaze(numSquaresTall - 1, 0);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -33,6 +34,7 @@ export default function Maze(props) {
   }
 
   function makeMaze(arr) {
+    cellBorder = (cellBorder + 1) % 25;
     if (!arr || arr.length === 0) return;
     let render = [];
     for (let i = 0; i < arr.length; i++) {
@@ -47,7 +49,11 @@ export default function Maze(props) {
         className += item.visited ? 'visited ' : '';
 
         row.push(
-          <div key={j} className={className} style={{ height: squareSize, width: squareSize }}>
+          <div
+            key={j}
+            className={className}
+            style={{ height: squareSize, width: squareSize, borderRadius: cellBorder.toString() + 'px' }}
+          >
             {item.text}
           </div>
         );
@@ -96,7 +102,9 @@ export default function Maze(props) {
       return;
     }
 
-    if (directions.length > 1) {
+    const isAtStart = i === numSquaresTall - 1 && j === 0;
+
+    if (directions.length > 1 && !isAtStart) {
       visited.push([i, j]);
     }
 
