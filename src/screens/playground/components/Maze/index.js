@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './maze.css';
-const squareSize = 30;
-const timeoutWait = 50;
+const squareSize = 25;
+const timeoutWait = 0;
 let visited = [];
+let addPaths = true;
 
 export default function Maze(props) {
   const { height, width } = props;
@@ -23,9 +24,9 @@ export default function Maze(props) {
       for (let j = 0; j < arr[i].length; j++) {
         arr[i][j] = {
           borders: [true, true, true, true],
-          position: [0, 0],
           visited: false,
           text: ' ',
+          path: (i === numSquaresTall - 1 && j === 0) || (i === 0 && j === numSquaresWide - 1) ? true : false,
         };
       }
     }
@@ -39,7 +40,7 @@ export default function Maze(props) {
       let row = [];
       for (let j = 0; j < arr[i].length; j++) {
         let item = arr[i][j];
-        let className = 'cell ';
+        let className = 'cell disable-selection ';
         className += item.borders[0] ? 'up ' : '';
         className += item.borders[1] ? 'right ' : '';
         className += item.borders[2] ? 'down ' : '';
@@ -48,6 +49,11 @@ export default function Maze(props) {
 
         row.push(
           <div key={j} className={className} style={{ height: squareSize, width: squareSize }}>
+            {!addPaths && item.path && (
+              <div id={'path'}>
+                <p>.</p>
+              </div>
+            )}
             {item.text}
           </div>
         );
@@ -85,21 +91,31 @@ export default function Maze(props) {
     squares[i][j].visited = true;
 
     if (directions.length === 0 || (i === 0 && j === numSquaresWide - 1)) {
+      if (i === 0 && j === numSquaresWide - 1) {
+        addPaths = false;
+      }
       if (visited.length === 0) {
         setMaze(makeMaze(squares));
         console.log('DONE!');
         return;
       }
-      // let goto = visited.pop();
-      let goto = visited.shift();
+
+      let goto = [0, 0];
+      while (directions.length === 0 && visited.length > 0) {
+        goto = visited.pop();
+        directions = getAvailableDirections(goto[0], goto[1]);
+        if (addPaths) squares[goto[0]][goto[1]].path = false;
+      }
+
       createMaze(goto[0], goto[1]);
       return;
     }
 
     const isAtStart = i === numSquaresTall - 1 && j === 0;
 
-    if (directions.length > 1 && !isAtStart) {
+    if (directions.length > 0 && !isAtStart) {
       visited.push([i, j]);
+      if (addPaths) squares[i][j].path = true;
     }
 
     setMaze(makeMaze(squares));
