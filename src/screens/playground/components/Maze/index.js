@@ -9,11 +9,13 @@ export default function Maze(props) {
   const { height, width } = props;
   const numSquaresWide = (width / squareSize) | 0;
   const numSquaresTall = (height / squareSize) | 0;
+  const startPos = [numSquaresTall - 1, 0];
+  const endPos = [0, numSquaresWide - 1];
   let squares = make2DArray(numSquaresWide, numSquaresTall);
   const [maze, setMaze] = useState(makeMaze(squares));
 
   useEffect(() => {
-    createMaze(numSquaresTall - 1, 0);
+    createMaze(startPos[0], startPos[1]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -25,8 +27,8 @@ export default function Maze(props) {
         arr[i][j] = {
           borders: [true, true, true, true],
           visited: false,
-          text: ' ',
-          path: (i === numSquaresTall - 1 && j === 0) || (i === 0 && j === numSquaresWide - 1) ? true : false,
+          text: i === startPos[0] && j === startPos[1] ? 's' : i === endPos[0] && j === endPos[1] ? 'e' : ' ',
+          path: (i === startPos[0] && j === startPos[1]) || (i === endPos[0] && j === endPos[1]) ? true : false,
         };
       }
     }
@@ -46,11 +48,12 @@ export default function Maze(props) {
         className += item.borders[2] ? 'down ' : '';
         className += item.borders[3] ? 'left ' : '';
         className += item.visited ? 'visited ' : '';
+        const isStartOrEnd = (i === startPos[0] && j === startPos[1]) || (i === endPos[0] && j === endPos[1]);
 
         row.push(
           <div key={j} className={className} style={{ height: squareSize, width: squareSize }}>
-            {!addPaths && item.path && (
-              <div id={'path'}>
+            {!addPaths && item.path && !isStartOrEnd && (
+              <div id="path">
                 <p>.</p>
               </div>
             )}
@@ -79,7 +82,7 @@ export default function Maze(props) {
     if (i !== 0 && !squares[i - 1][j].visited) {
       directions.push('up');
     }
-    if (i !== numSquaresTall - 1 && !squares[i + 1][j].visited) {
+    if (i !== startPos[0] && !squares[i + 1][j].visited) {
       directions.push('down');
     }
 
@@ -90,8 +93,8 @@ export default function Maze(props) {
     let directions = getAvailableDirections(i, j);
     squares[i][j].visited = true;
 
-    if (directions.length === 0 || (i === 0 && j === numSquaresWide - 1)) {
-      if (i === 0 && j === numSquaresWide - 1) {
+    if (directions.length === 0 || (i === endPos[0] && j === endPos[1])) {
+      if (i === endPos[0] && j === endPos[1]) {
         addPaths = false;
       }
       if (visited.length === 0) {
@@ -111,7 +114,7 @@ export default function Maze(props) {
       return;
     }
 
-    const isAtStart = i === numSquaresTall - 1 && j === 0;
+    const isAtStart = i === startPos[0] && j === startPos[1];
 
     if (directions.length > 0 && !isAtStart) {
       visited.push([i, j]);
