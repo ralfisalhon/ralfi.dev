@@ -58,3 +58,21 @@
   -webkit-user-select: none; /* Chrome, Safari, and Opera */
   -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
 }
+
+.thumb {
+  height: 20px;
+  width: 20px;
+  background-color: red;
+}
+
+.track {
+  background-color: blue !important;
+  height: 10px;
+}
+
+.horizontal-slider {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -5,6 +5,7 @@ import Line from '../../components/Line';
 import Clickable from './components/Clickable';
 import Maze from './components/Maze';
 import NavBar from './components/NavBar';
+import ReactSlider from 'react-slider';
 
 export default function PlaygroundPage() {
   const [fill, setFill] = useState(false);
@@ -26,7 +27,18 @@ export default function PlaygroundPage() {
         <div className="playground-container">
           <NavBar title="ralfi.dev" routes={['Home', 'Resume', 'Projects', 'Playground', 'Fun Facts']} />
         </div>
-        <Maze height={window.innerHeight * 0.55} width={window.innerWidth * 0.55} />
+        <div className="playground-container">
+          <ReactSlider
+            className="horizontal-slider"
+            thumbClassName="thumb disable-selection"
+            trackClassName="track"
+            onBeforeChange={(val) => console.log('onBeforeChange value:', val)}
+            onChange={(val) => console.log('onChange value:', val)}
+            onAfterChange={(val) => console.log('onAfterChange value:', val)}
+            renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
+          />
+          <Maze height={window.innerHeight * 0.55} width={window.innerWidth * 0.55} />
+        </div>
       </div>
     </div>
   );
