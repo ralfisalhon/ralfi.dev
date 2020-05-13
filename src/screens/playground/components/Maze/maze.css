@@ -69,10 +69,3 @@
   background-color: blue !important;
   height: 10px;
 }
-
-.horizontal-slider {
-  margin-bottom: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}

@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './maze.css';
 const squareSize = 25;
-const timeoutWait = 0;
 let visited = [];
 let addPaths = true;
 
 export default function Maze(props) {
-  const { height, width } = props;
+  const { height, width, timeout } = props;
   const numSquaresWide = (width / squareSize) | 0;
   const numSquaresTall = (height / squareSize) | 0;
   const startPos = [numSquaresTall - 1, 0];
@@ -15,9 +14,14 @@ export default function Maze(props) {
   const [maze, setMaze] = useState(makeMaze(squares));
 
   useEffect(() => {
+    let id = window.setTimeout(function () {}, 0);
+    while (id--) {
+      window.clearTimeout(id);
+    }
+    console.log('squares is', squares);
     createMaze(startPos[0], startPos[1]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [timeout]);
 
   function make2DArray(width, height) {
     let arr = new Array(height);
@@ -129,22 +133,22 @@ export default function Maze(props) {
       squares[i][j].borders[2] = false;
       squares[i + 1][j].borders[0] = false;
 
-      setTimeout(() => createMaze(i + 1, j), timeoutWait);
+      setTimeout(() => createMaze(i + 1, j), timeout);
     }
     if (direction === 'up') {
       squares[i][j].borders[0] = false;
       squares[i - 1][j].borders[2] = false;
-      setTimeout(() => createMaze(i - 1, j), timeoutWait);
+      setTimeout(() => createMaze(i - 1, j), timeout);
     }
     if (direction === 'right') {
       squares[i][j].borders[1] = false;
       squares[i][j + 1].borders[3] = false;
-      setTimeout(() => createMaze(i, j + 1), timeoutWait);
+      setTimeout(() => createMaze(i, j + 1), timeout);
     }
     if (direction === 'left') {
       squares[i][j].borders[3] = false;
       squares[i][j - 1].borders[1] = false;
-      setTimeout(() => createMaze(i, j - 1), timeoutWait);
+      setTimeout(() => createMaze(i, j - 1), timeout);
     }
   }
 
