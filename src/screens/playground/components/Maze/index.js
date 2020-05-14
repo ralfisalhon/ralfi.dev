@@ -107,9 +107,10 @@ export default function Maze(props) {
         return;
       }
 
-      let goto = [0, 0];
+      let goto = [startPos[0], startPos[1]];
       while (directions.length === 0 && visited.length > 0) {
-        goto = visited.pop();
+        if (addPaths) goto = visited.pop();
+        else goto = visited.shift();
         directions = getAvailableDirections(goto[0], goto[1]);
         if (addPaths) squares[goto[0]][goto[1]].path = false;
       }
