@@ -23,14 +23,14 @@ export default function PlaygroundPage() {
           <NavBar title="ralfi.dev" routes={['Home', 'Resume', 'Projects', 'Playground', 'Fun Facts']} />
         </div>
         <div className="playground-container">
-          <ReactSlider
+          {/* <ReactSlider
             className="horizontal-slider"
             thumbClassName="thumb disable-selection"
             trackClassName="track"
             onAfterChange={(val) => setTimeout(val)}
             renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
-          />
-          <Maze height={window.innerHeight * 0.55} width={window.innerWidth * 0.55} timeout={100 - timeout} />
+          /> */}
+          <Maze height={window.innerHeight * 0.55} width={window.innerWidth * 0.55} timeout={timeout} />
         </div>
       </div>
     </div>

@@ -69,3 +69,7 @@
   background-color: blue !important;
   height: 10px;
 }
+
+#path p {
+  font-weight: bolder;
+}
