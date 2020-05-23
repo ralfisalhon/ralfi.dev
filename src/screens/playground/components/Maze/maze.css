@@ -30,16 +30,16 @@
   background-color: var(--light-color);
 }
 
-.up {
+.b-up {
   border-top: 2px solid var(--dark-color);
 }
-.down {
+.b-down {
   border-bottom: 2px solid var(--dark-color);
 }
-.left {
+.b-left {
   border-left: 2px solid var(--dark-color);
 }
-.right {
+.b-right {
   border-right: 2px solid var(--dark-color);
 }
 

@@ -47,10 +47,10 @@ export default function Maze(props) {
       for (let j = 0; j < arr[i].length; j++) {
         let item = arr[i][j];
         let className = 'cell disable-selection ';
-        className += item.borders[0] ? 'up ' : '';
-        className += item.borders[1] ? 'right ' : '';
-        className += item.borders[2] ? 'down ' : '';
-        className += item.borders[3] ? 'left ' : '';
+        className += item.borders[0] ? 'b-up ' : '';
+        className += item.borders[1] ? 'b-right ' : '';
+        className += item.borders[2] ? 'b-down ' : '';
+        className += item.borders[3] ? 'b-left ' : '';
         className += item.visited ? 'visited ' : '';
         const isStartOrEnd = (i === startPos[0] && j === startPos[1]) || (i === endPos[0] && j === endPos[1]);
 
