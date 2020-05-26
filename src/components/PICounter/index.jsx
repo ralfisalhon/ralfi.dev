@@ -36,7 +36,9 @@ class PICounter extends Component {
           <p className="PI">
             <b
               onClick={() => this.piTimer()}
-              style={num === 0 ? { textDecorationLine: 'underline', cursor: 'pointer' } : {}}
+              style={
+                num === 0 ? { textDecorationLine: 'underline', cursor: 'pointer', fontWeight: '800 !important' } : {}
+              }
             >
               3.14
             </b>
