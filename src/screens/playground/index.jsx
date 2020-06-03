@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
+import React from 'react';
 import './styles.css';
 import Line from '../../components/Line';
 
 // import Clickable from './components/Clickable';
 import Maze from './components/Maze';
 import NavBar from './components/NavBar';
-import ReactSlider from 'react-slider';
+// import ReactSlider from 'react-slider';
 
 export default function PlaygroundPage() {
-  const [timeout, setTimeout] = useState(0);
+  // const [timeout, setTimeout] = useState(0);
   return (
     <div>
       <h1>Playground</h1>
@@ -30,7 +31,7 @@ export default function PlaygroundPage() {
             onAfterChange={(val) => setTimeout(val)}
             renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
           /> */}
-          <Maze height={window.innerHeight * 0.55} width={window.innerWidth * 0.55} timeout={timeout} />
+          <Maze height={window.innerHeight * 0.55} width={window.innerWidth * 0.55} timeout={0} />
         </div>
       </div>
     </div>

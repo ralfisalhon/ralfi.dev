@@ -136,10 +136,14 @@ class HomePage extends Component {
                 My name is Ralfi, and I'm a <span className="coral">passionate</span> developer.
               </p>
               <div className="m-5" />
-              <p className="text">
+              {/* <p className="text">
                 I'm currently seeking for a full-time position. I care most about becoming the best developer I can be,
                 and to work with great engineers who I can learn something new from every day. Feel free to reach out
                 for mobile or front-end positions!
+              </p> */}
+              <p className="text">
+                I care most about becoming the best developer I can be, and to work with great engineers who I can learn
+                something new from every day.
               </p>
             </div>
           </div>
