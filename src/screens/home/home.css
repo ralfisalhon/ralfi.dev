@@ -26,6 +26,7 @@
   height: 100vh;
   justify-content: center;
   overflow: hidden;
+  padding: 0px 30px;
 }
 
 :root {
@@ -201,4 +202,40 @@
   display: flex;
   flex-direction: row;
   min-height: 35px;
+}
+
+.mobile-tab {
+  font-size: 24px;
+}
+
+.tabs {
+  margin-top: 20px;
+}
+
+.tab {
+  font-size: 18px !important;
+  color: coral;
+  font-weight: bold;
+}
+
+div.slide-right {
+  width: 100%;
+  overflow: hidden;
+  word-wrap: none;
+  white-space: nowrap;
+}
+div.slide-right p {
+  animation: 2s slide-right;
+}
+
+@keyframes slide-right {
+  from {
+    margin-left: 0px;
+    opacity: 1;
+  }
+
+  to {
+    margin-left: 90vw;
+    opacity: 0;
+  }
 }

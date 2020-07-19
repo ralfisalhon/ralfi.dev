@@ -18,12 +18,12 @@ class Project extends Component {
         <div className="catchPhraseContainer" style={{ backgroundColor: color }}>
           <div className="flexRow">
             <div className="verticalCenter">
-              <h1 className="catchPhrase white">{title}</h1>
-              <div className="m-20" />
+              <h1 className={global.isMobile ? 'text white' : 'catchPhrase white'}>{title}</h1>
+
               <center className="right">
-                <img className="logo" src={logo} alt="logo" />
+                <img className={global.isMobile ? 'logo-small-project' : 'logo'} src={logo} alt="logo" />
                 <div className="m-10" />
-                <h1 className="text white">{name}</h1>
+                <p className={global.isMobile && name.length > 8 ? 'text white small' : 'text white'}>{name}</p>
               </center>
             </div>
           </div>

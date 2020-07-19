@@ -20,19 +20,25 @@ class SmallProject extends Component {
     const { isHovering } = this.state;
 
     return (
-      <div className="small-project" onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover}>
-        <img className="logo-small" src={logo} alt="logo" />
+      <div
+        className={global.isMobile ? 'small-project-mobile' : 'small-project'}
+        onMouseEnter={!global.isMobile && this.handleMouseHover}
+        onMouseLeave={!global.isMobile && this.handleMouseHover}
+      >
+        <img className={global.isMobile ? 'logo-small-mobile' : 'logo-small'} src={logo} alt="logo" />
         <div className="m-20-left split">
           <div>
-            <h1 className="text big">{name}</h1>
-            <p className="text">{title}</p>
+            <h1 className={global.isMobile ? 'text' : 'text big'}>{name}</h1>
+            <p className={global.isMobile ? 'text small' : 'text'}>{title}</p>
           </div>
-          {isHovering && (
+          {(isHovering || global.isMobile) && (
             <span className="fade-in-fast">
               <div className="m-10" />
-              <p className="text smaller">
-                <b>Tech Stack:</b> {techs}
-              </p>
+              {isHovering && (
+                <p className="text smaller">
+                  <b>Tech Stack:</b> {techs}
+                </p>
+              )}
               {contributors && (
                 <span>
                   <div className="m-5" />

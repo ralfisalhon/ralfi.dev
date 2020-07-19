@@ -83,14 +83,14 @@
   min-height: calc(100vh - 100);
   width: 100vw;
   background-color: var(--light-color);
-  padding: 50px 50px 50px 50px;
+  padding: 50px;
   /* overflow: hidden; */
 }
 
 .content-mobile {
   height: auto;
   width: 100%;
-  padding: 0px 50px 0px 50px;
+  padding: 20px;
   background-color: var(--light-color);
   overflow: hidden;
 }
@@ -141,6 +141,10 @@
   justify-content: center;
   align-items: center;
 } */
+
+.projects-mobile {
+  /* background-color: lightgray; */
+}
 
 .no-border {
   border: none;

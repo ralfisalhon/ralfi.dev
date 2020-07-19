@@ -11,7 +11,7 @@ class ProjectsPage extends Component {
           <h1 className="cursor">Projects</h1>
         </Link>
         <div className="m-5" />
-        <h3 className="subtitle">What I live to do</h3>
+        <h3 className="subtitle">My favourite pastime</h3>
         <Line />
       </div>
     );

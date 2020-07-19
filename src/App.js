@@ -6,7 +6,7 @@ import Header from './components/Header';
 import Project from './components/Project';
 import SmallProject from './components/SmallProject';
 
-import HomePage from './screens/home';
+import { HomePage } from './screens/home';
 import ResumePage from './screens/resume';
 import ProjectsPage from './screens/projects';
 import PlaygroundPage from './screens/playground';
@@ -43,7 +43,7 @@ export default function App() {
                 ))}
               </Route>
               <Route exact path="/projects">
-                <div className="all-projects">
+                <div className={global.isMobile ? 'projects-mobile' : 'projects-web'}>
                   {Object.keys(projects).map((key) => (
                     <Link className="no-border" to={'/projects/' + key} key={key}>
                       <SmallProject project={projects[key]} />
