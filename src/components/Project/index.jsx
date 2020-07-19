@@ -30,18 +30,18 @@ class Project extends Component {
         </div>
         <div className="m-20" />
         {platforms && (
-          <div className="platforms">
+          <div className="platforms less-margin">
             {Object.keys(platforms).map((platform) => (
               <div
                 key={platform}
-                className="platform cursor"
+                className={global.isMobile ? 'platform-mobile' : 'platform cursor'}
                 style={{ backgroundColor: color, marginRight: '10px' }}
                 onClick={() => window.open(platforms[platform], '_blank')}
               >
                 <p className="text white">{platform_conversions[platform]}</p>
               </div>
             ))}
-            {awards && (
+            {awards && !global.isMobile && (
               <div className="awards right">
                 {awards.map((award) => (
                   <div className="platform" style={{ backgroundColor: color }} key={award}>
@@ -53,6 +53,18 @@ class Project extends Component {
                 ))}
               </div>
             )}
+          </div>
+        )}
+        {awards && global.isMobile && (
+          <div className="awards-mobile">
+            {awards.map((award) => (
+              <div className="platform" style={{ backgroundColor: color }} key={award}>
+                <p className="text white">
+                  {'🏆 '}
+                  {award}
+                </p>
+              </div>
+            ))}
           </div>
         )}
         <div>
@@ -67,15 +79,18 @@ class Project extends Component {
           )}
           <center>
             {description && <div className="m-20" />}
-            <div className="row around">
+            <div className={global.isMobile ? 'around' : 'row around'}>
               {screenshots &&
                 screenshots.map((screenshot) => (
-                  <img
-                    key={screenshot}
-                    className={wideSS ? 'screenshot-wide' : 'screenshot'}
-                    alt="project screenshot"
-                    src={screenshot}
-                  ></img>
+                  <>
+                    {global.isMobile && <div className="m-10" />}
+                    <img
+                      key={screenshot}
+                      className={wideSS ? 'screenshot-wide' : 'screenshot'}
+                      alt="project screenshot"
+                      src={screenshot}
+                    />
+                  </>
                 ))}
             </div>
             {video && (
@@ -83,8 +98,8 @@ class Project extends Component {
                 <div className="m-20" />
                 <iframe
                   title="video"
-                  width={window.innerWidth * 0.6}
-                  height={window.innerWidth * 0.6 * 0.56}
+                  width={global.isMobile ? window.innerWidth * 0.9 : window.innerWidth * 0.6}
+                  height={global.isMobile ? window.innerWidth * 0.9 * 0.56 : window.innerWidth * 0.6 * 0.56}
                   src={video}
                   frameBorder="0"
                 />

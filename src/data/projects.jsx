@@ -113,11 +113,11 @@ const projects = {
     logo: tunewiseLogo,
     color: 'rgb(100, 43, 168)',
     title: 'Music centered mobile party game.',
-    // description: 'Get that party on',
+    description: 'Visit https://tunewise.app and give it a try. My React pastime project, improved upon Polyhack 2019',
     awards: ['Best Mobile App, Polyhack 2019'],
     platforms: {
       github: 'https://github.com/ralfisalhon/TuneWise',
-      website: 'https://github.com/ralfisalhon/TuneWise-web',
+      website: 'https://tunewise.app',
     },
     screenshots: [tunewiseSS1, tunewiseSS2, tunewiseSS3, tunewiseSS4],
     techs: ['React Native, React.js, Node.js, Heroku'],

@@ -60,7 +60,18 @@
 }
 
 .platform {
-  /* margin-right: 10px; */
   padding: 20px;
   border-radius: 20px;
+}
+
+.less-margin {
+  margin-bottom: 10px;
+}
+
+.platform-mobile {
+  display: flex;
+  padding: 15px;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
 }

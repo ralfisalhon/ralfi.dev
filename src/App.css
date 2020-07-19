@@ -27,6 +27,10 @@
   font-size: 18px;
 }
 
+.just-smaller {
+  font-size: 16px !important;
+}
+
 .coral {
   color: coral !important;
 }
@@ -148,4 +152,8 @@
 
 .no-border {
   border: none;
+}
+
+.awards-mobile {
+  margin-bottom: 20px;
 }
