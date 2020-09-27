@@ -15,7 +15,7 @@ class FunFactsPage extends Component {
         <Line />
         <AlphabetRecord />
         <Line />
-        <p className="text fact-title">> I've been playing the piano for 14 years</p>
+        <p className="text fact-title">{'>'} I've been playing the piano for over 15 years</p>
         <div className="m-10" />
         <p>
           Here, listen to baby me play when I was <a href="https://www.youtube.com/watch?v=bTn22GQevjw">9 years</a> old,{' '}

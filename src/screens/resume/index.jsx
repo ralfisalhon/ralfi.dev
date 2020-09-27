@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
-import resume from '../../assets/pdf/RRS_Resume_May_2020.pdf';
+import resume from '../../assets/pdf/RRS_Resume_Sep_2020.pdf';
 import Line from '../../components/Line';
 import './AnnotationLayer.css';
 import './resume.css';
@@ -23,7 +23,7 @@ class ResumePage extends Component {
       <div className="resume-page">
         <h1>My Resume</h1>
         <div className="m-5" />
-        <h3 className="subtitle">Last updated: May 2020</h3>
+        <h3 className="subtitle">Last updated: Sep 2020</h3>
         <Line />
         <div style={{ height: resumeHeight, overflow: 'hidden' }}>
           <Document file={resume}>

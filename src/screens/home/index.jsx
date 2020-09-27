@@ -17,7 +17,7 @@ import YoutubeLogo from '../../assets/svg/youtube.svg';
 import GithubLogo from '../../assets/svg/github.svg';
 import SpotifyLogo from '../../assets/svg/spotify.svg';
 
-import resume from '../../assets/pdf/RRS_Resume_May_2020.pdf';
+import resume from '../../assets/pdf/RRS_Resume_Sep_2020.pdf';
 
 export const HomePage = () => {
   const [slide, setSlide] = useState(false);
