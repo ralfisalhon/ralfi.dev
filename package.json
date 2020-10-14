@@ -6,7 +6,9 @@
     "start": "REACT_APP_GIT_HASH=`git rev-parse HEAD` react-scripts start",
     "build": "REACT_APP_GIT_HASH=`git rev-parse HEAD` react-scripts build",
     "test": "react-scripts test --modulePaths=src",
-    "format": "prettier --config .prettierrc --write \"**/*.js\""
+    "format": "prettier --config .prettierrc --write \"**/*.js\"",
+    "predeploy": "npm run build && cp CNAME build/CNAME",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "react": "^16.13.1",
