@@ -1,44 +1,53 @@
 {
-  "name": "react-template",
-  "version": "0.1.0",
+  "name": "ava-ui",
+  "version": "2.12.0",
   "private": true,
-  "homepage": "https://ralfi.dev",
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "react": "^16.13.0",
-    "react-code-input": "^3.9.0",
-    "react-dom": "^16.13.0",
-    "react-pdf": "^4.1.0",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.0",
-    "react-slider": "^1.0.6"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build && cp CNAME build/CNAME",
-    "deploy": "gh-pages -d build"
+    "start": "REACT_APP_GIT_HASH=`git rev-parse HEAD` react-scripts start",
+    "build": "REACT_APP_GIT_HASH=`git rev-parse HEAD` react-scripts build",
+    "test": "react-scripts test --modulePaths=src",
+    "format": "prettier --config .prettierrc --write \"**/*.js\""
   },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^3.4.3",
+    "react-use": "^13.27.0",
+    "remixicon": "^2.5.0",
+    "styled-components": "^5.0.1",
+    "sugar": "^2.0.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@testing-library/react-hooks": "^3.3.0",
+    "date-fns": "^2.14.0",
+    "env-cmd": "^8.0.2",
+    "faker": "^4.1.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5",
+    "react-test-renderer": "^16.12.0"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "CI=true npm test"
+    }
   },
-  "devDependencies": {
-    "gh-pages": "^2.2.0"
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "eslint --max-warnings 0",
+      "prettier --config .prettierrc --write"
+    ]
   }
 }
