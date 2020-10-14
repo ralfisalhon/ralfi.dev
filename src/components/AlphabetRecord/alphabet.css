@@ -1,13 +1,8 @@
-.text {
-  font-size: 24px;
-}
-
 .PI {
-  color: coral;
   margin: 0px;
   padding: 0px;
+  margin-top: 5px;
   word-break: break-all;
-  font-size: 32px;
 }
 
 .fonts {
@@ -29,12 +24,6 @@
 
 .font {
   font-size: 24px;
-}
-
-a {
-  color: black;
-  border-bottom: 1px solid coral; /* Or whatever color you want */
-  text-decoration: none;
 }
 
 a:visited {

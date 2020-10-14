@@ -3,8 +3,9 @@ import React, { Component } from 'react';
 import './alphabet.css';
 
 const ALPHABET = 'abcdefghijklmnopqrstuvwxyz';
+const IS_MOBILE = window.innerWidth <= 1200 || window.innerHeight < 600;
 class AlphabetRecord extends Component {
-  constructor() {
+  constructor(props) {
     super();
     this.state = {
       num: 1,
@@ -36,22 +37,24 @@ class AlphabetRecord extends Component {
     this.alphabetTimer();
   }
 
+
   render() {
-    const { num } = this.state;
+    const { num,} = this.state;
+    const { fgColor, bgColor, lightMode } = this.props;
+
+    const videoWidth = IS_MOBILE ? window.innerWidth * 0.9 : 560;
+
     return (
       <div>
-        <p className="text fact-title">> I am the World's Fastest Smartphone Typer</p>
-        <div className="m-10" />
         <div className="PIContainer">
-          <p className="PI">{ALPHABET.substr(0, num)}</p>
+          <h2 style={{color: lightMode ? bgColor : fgColor}} className="PI">{ALPHABET.substr(0, num)}</h2>
         </div>
-        <div className="m-10" />
-        <p className="text">Watch me type the alphabet in 3.777 seconds on my Pixel 3:</p>
-        <div className="m-10" />
+        <p style={{margin: '10px 0px'}}>Watch me type the alphabet in 3.777 seconds on my Pixel 3:</p>
         <iframe
           title="video"
-          width="560"
-          height="315"
+          // 560, 315
+          width={videoWidth}
+          height={videoWidth*0.56}
           src="https://www.youtube-nocookie.com/embed/Mo094dNblBc"
           frameBorder="0"
           allowFullScreen="allowfullscreen"
