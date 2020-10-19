@@ -39,7 +39,7 @@ const PROJECTS = [
   {
     name: 'Red or Blue',
     logo: redorblueLogo,
-    color: 'rgb(195, 55, 238)',
+    color: '#8e44ad',
     title: 'A 2D puzzle platformer game with a twist.',
     description: [
       'Red or Blue started as our final project for Professor Jason Wiser’s Game Design class at Tufts University. The game opens with our protagonist falling asleep in his bed and waking up in a dream-like version of his school. Armed with magic 3D glasses, he has to find a way to escape while facing the bullies that harass him in real life. ',
@@ -60,7 +60,7 @@ const PROJECTS = [
   {
     name: 'Jamblr',
     logo: jamblrLogo,
-    color: '#2f2f2f',
+    color: '#181818',
     title: 'Your music discovery and playlist creation platform.',
     description: [
       'Jamblr is originally a Polyhack 2018 project, where I worked on it with Mohsin Rizvi and Nihal Pai.',
@@ -79,7 +79,7 @@ const PROJECTS = [
   {
     name: 'iGurme',
     logo: igurmeLogo,
-    color: 'chocolate',
+    color: '#f39c12',
     title: 'An e-commerce app designed to test SDK features.',
     description: [
       'I developed iGurme during my 2019 Summer internship at Insider. It is a demo app written with React Native to test and display features of the Insider Mobile SDK. It supports iOS and Android.',
@@ -94,7 +94,7 @@ const PROJECTS = [
   {
     name: 'PolySentry',
     logo: polysentryLogo,
-    color: 'rgb(1, 163, 164)',
+    color: '#16a085',
     title: 'Security platform that provides real-time threat protection.',
     description: [
       'I architected, developed, and documented the app of a security platform that provides real-time threat protection.',
@@ -111,7 +111,7 @@ const PROJECTS = [
   {
     name: 'TuneWise',
     logo: tunewiseLogo,
-    color: 'rgb(100, 43, 168)',
+    color: '#c0392b',
     title: 'Music centered mobile party game.',
     description: 'Visit https://tunewise.app and give it a try. My React pastime project, improved upon Polyhack 2019',
     awards: ['Best Mobile App, Polyhack 2019'],
@@ -126,7 +126,7 @@ const PROJECTS = [
   {
     name: 'Potencia',
     logo: potenciaLogo,
-    color: 'rgb(35, 105, 246)',
+    color: '#2980b9',
     title: 'A social outreach and education platform.',
     // description: 'Free lance work... Somerville',
     platforms: {
@@ -141,7 +141,7 @@ const PROJECTS = [
   {
     name: 'CoverLove',
     logo: coverloveLogo,
-    color: 'rgb(243, 156, 18)',
+    color: '#d35400',
     title: 'A simple tool to create new playlist cover art.',
     description: [
       'I made and deployed this app in under 24 hours as a self-hackathon',
@@ -157,7 +157,7 @@ const PROJECTS = [
   {
     name: 'Hearo',
     logo: hearoLogo,
-    color: 'rgb(67, 115, 130)',
+    color: '#27ae60',
     title: 'Your conference call personal assistant.',
     // description:
     //   'LOREM ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
@@ -171,7 +171,7 @@ const PROJECTS = [
   {
     name: 'ClaimMate',
     logo: claimmateLogo,
-    color: 'rgb(18, 47, 66)',
+    color: '#2c3e50',
     title: 'Global Legal Hackathon 2019 finalist.',
     // description: 'Done in 48 hours. I slept like 5 hours.',
     awards: ['2nd Place, Global Legal Hackathon 2019'],
