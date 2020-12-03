@@ -11,11 +11,13 @@ export const Splash = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  background: ${({ fgColor, bgColor, lightMode }) => (lightMode ? fgColor : bgColor)};
+  background: ${({ fgColor, bgColor, lightMode }) =>
+    lightMode ? fgColor : bgColor};
 
   h1,
   p {
-    color: ${({ fgColor, bgColor, lightMode }) => (lightMode ? bgColor : fgColor)};
+    color: ${({ fgColor, bgColor, lightMode }) =>
+      lightMode ? bgColor : fgColor};
   }
 
   p {
@@ -55,7 +57,9 @@ export const Button = styled.p`
   }
 
   ${({ selected }) => {
-    return selected ? 'font-size: 22px; margin: 0px 20px !important; font-weight: 500;' : '';
+    return selected
+      ? 'font-size: 22px; margin: 0px 20px !important; font-weight: 500;'
+      : '';
   }};
 `;
 
@@ -63,6 +67,10 @@ export const SocialButtons = styled.span`
   display: flex;
   flex-direction: row;
   margin: 20px 0px;
+
+  img {
+    cursor: pointer;
+  }
 `;
 
 export const RefreshContainer = styled.div`
@@ -71,7 +79,8 @@ export const RefreshContainer = styled.div`
 
 export const InfoWrapper = styled.div`
   a {
-    color: ${({ fgColor, bgColor, lightMode }) => (lightMode ? bgColor : fgColor)};
+    color: ${({ fgColor, bgColor, lightMode }) =>
+      lightMode ? bgColor : fgColor};
     text-decoration-line: none;
   }
 
