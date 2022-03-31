@@ -26,7 +26,7 @@ import PROJECTS from 'assets/data/projects';
 const isMobile = window.innerWidth < 700;
 
 export const NewHome = () => {
-  const [index, setIndex] = useState(3);
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const keydownFunction = function (e) {
