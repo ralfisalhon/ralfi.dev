@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 
 export const Main = styled.div`
-  background: #181818;
+  background: var(--dark-color);
   display: flex;
   flex: 1;
   height: 100vh;
@@ -11,7 +11,7 @@ export const Main = styled.div`
 
   font-family: Avenir Next;
 
-  color: #f2f2f2;
+  color: var(--light-color);
 
   p,
   a {
@@ -30,22 +30,24 @@ export const Words = styled.div`
   font-family: Avenir Next;
   position: relative;
   padding: 8px;
-  border: 1px solid #f2f2f2;
+  border: 1px solid var(--light-color);
   border-radius: 0.3rem;
   line-height: 1;
   width: 700px;
   margin: 10px 0px 15px 0px;
 `;
 export const Word = styled.div`
-  color: #f2f2f2;
+  color: var(--light-color);
   ${({ selected, color }) => selected && `color: ${color}`};
 
   transition: all 500ms ease-out;
   user-select: none;
-  margin-left: ${({ index, currentIndex, width, visible }) =>
+  margin-left: ${({ index, currentIndex, width }) =>
     currentIndex > index ? `-${width}px` : '8px'};
 
   ${({ selected }) => !selected && `cursor: pointer`};
+
+  z-index: ${({ visible }) => (visible ? 1 : 0)};
 
   opacity: 0.5;
   ${({ selected, currentIndex, index }) =>
@@ -73,7 +75,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: row;
   transition: 500ms;
-  height: 40px;
+  height: 100px;
 `;
 
 export const SocialButtons = styled.span`
@@ -95,15 +97,16 @@ export const InfoBox = styled.div`
   gap: 10px;
   display: flex;
   flex-wrap: wrap;
-  width: 475px;
+  width: 500px;
+  margin-right: 10px;
   a {
     color: var(--light-color);
     text-decoration-line: none;
   }
 
   img {
-    width: 40px;
-    height: 40px;
+    width: 80px;
+    height: 80px;
   }
 `;
 

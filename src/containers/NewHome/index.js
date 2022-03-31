@@ -23,11 +23,14 @@ export const NewHome = () => {
 
   useEffect(() => {
     const eyFn = function (e) {
+      console.log(e.keyCode);
       switch (e.keyCode) {
-        case 37:
+        case 37: // Left Arrow
+        case 16: // Shift
           setIndex(prev => Math.max(prev - 1, 0));
           break;
-        case 39:
+        case 39: // Right Arrow
+        case 13: // Enter
           setIndex(prev => Math.min(prev + 1, 4));
           break;
         default:
@@ -42,7 +45,7 @@ export const NewHome = () => {
     <Main>
       <Wrapper>
         <Name index={index} onClick={() => setIndex(0)}>
-          ralfi.dev <p style={{ color: '#2d3436' }}>WIP</p>
+          ralfi.dev
         </Name>
         <Words>
           <Word
@@ -53,12 +56,8 @@ export const NewHome = () => {
             width={50}
             visible
           >
-            <span
-              role="img"
-              aria-label=""
-              style={{ lineHeight: 1, marginRight: '10px' }}
-            >
-              🔎
+            <span role="img" aria-label="" style={{ marginRight: '8px' }}>
+              {index === 0 ? '🔎' : '⬅️'}
             </span>
           </Word>
 
@@ -123,6 +122,7 @@ export const NewHome = () => {
                   href={proj.platforms.github}
                   rel="noopener noreferrer"
                   target="_blank"
+                  title={proj.name}
                 >
                   <img src={proj.logo} alt={proj.name}></img>
                 </a>
@@ -142,11 +142,13 @@ export const NewHome = () => {
               onClick={() =>
                 window.open('https://www.linkedin.com/in/ralfisalhon/')
               }
+              title="LinkedIn"
             />
             <img
               src={GithubLogo}
               alt="Github Logo"
               onClick={() => window.open('https://github.com/ralfisalhon')}
+              title="Github"
             />
             <img
               src={SpotifyLogo}
@@ -156,6 +158,7 @@ export const NewHome = () => {
                   'https://open.spotify.com/user/pnoig1591pjau15ah9ja412k6'
                 )
               }
+              title="Spotify"
             />
             <img
               src={YoutubeLogo}
@@ -165,6 +168,7 @@ export const NewHome = () => {
                   'https://www.youtube.com/channel/UCZOm0qLlSm19QyvAc_rsOmQ?view_as=subscriber'
                 )
               }
+              title="Youtube"
             />
           </SocialButtons>
         </Content>
