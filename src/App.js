@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import { Home } from 'containers/Home';
+import { NewHome } from 'containers/NewHome';
 import { NoMatchPage } from 'containers/NoMatchPage';
 
 import './App.css';
@@ -16,7 +16,7 @@ const App = () => {
         <div className="content">
           <Switch>
             <Route exact path="/">
-              <Home />
+              <NewHome />
             </Route>
             <Route>
               <NoMatchPage />
