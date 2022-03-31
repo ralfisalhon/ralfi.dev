@@ -45,6 +45,8 @@ export const NewHome = () => {
     return () => document.removeEventListener('keydown', eyFn);
   });
 
+  console.log({ index });
+
   return (
     <Main>
       {isMobile ? (
@@ -66,7 +68,7 @@ export const NewHome = () => {
           <Name index={index} onClick={() => setIndex(0)}>
             ralfi.dev
           </Name>
-          <Words>
+          <Words index={index}>
             <Word
               index={0}
               currentIndex={index}
@@ -82,7 +84,7 @@ export const NewHome = () => {
                   lineHeight: 1,
                   margin: 0,
                   height: '1.5rem',
-                  marginRight: '8px',
+                  marginRight: index > 1 ? '0px' : '8px',
                 }}
               />
             </Word>
@@ -95,7 +97,7 @@ export const NewHome = () => {
               width={105}
               color="white"
             >
-              Resume,
+              Resume
             </Word>
             <Word
               index={2}
@@ -105,7 +107,7 @@ export const NewHome = () => {
               width={102}
               color="white"
             >
-              Projects,
+              Projects
             </Word>
             <Word
               index={3}
@@ -115,7 +117,7 @@ export const NewHome = () => {
               width={100}
               color="white"
             >
-              Contact,
+              Contact
             </Word>
             <Word
               index={4}
