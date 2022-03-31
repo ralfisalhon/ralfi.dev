@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.d51a889a.chunk.css",
-    "main.js": "/static/js/main.42b7ad46.chunk.js",
-    "main.js.map": "/static/js/main.42b7ad46.chunk.js.map",
+    "main.css": "/static/css/main.39b6a671.chunk.css",
+    "main.js": "/static/js/main.acbaa82a.chunk.js",
+    "main.js.map": "/static/js/main.acbaa82a.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.4b850588.js",
     "runtime-main.js.map": "/static/js/runtime-main.4b850588.js.map",
-    "static/js/2.e41caac6.chunk.js": "/static/js/2.e41caac6.chunk.js",
-    "static/js/2.e41caac6.chunk.js.map": "/static/js/2.e41caac6.chunk.js.map",
+    "static/js/2.9533ac5b.chunk.js": "/static/js/2.9533ac5b.chunk.js",
+    "static/js/2.9533ac5b.chunk.js.map": "/static/js/2.9533ac5b.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.4d621ba7f3b982de6f852795bbbcb300.js": "/precache-manifest.4d621ba7f3b982de6f852795bbbcb300.js",
+    "precache-manifest.1fe9d68296d0482f024f104f1624b509.js": "/precache-manifest.1fe9d68296d0482f024f104f1624b509.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.d51a889a.chunk.css.map": "/static/css/main.d51a889a.chunk.css.map",
-    "static/js/2.e41caac6.chunk.js.LICENSE.txt": "/static/js/2.e41caac6.chunk.js.LICENSE.txt",
+    "static/css/main.39b6a671.chunk.css.map": "/static/css/main.39b6a671.chunk.css.map",
+    "static/js/2.9533ac5b.chunk.js.LICENSE.txt": "/static/js/2.9533ac5b.chunk.js.LICENSE.txt",
     "static/media/RRS_Resume_Feb_2022.pdf": "/static/media/RRS_Resume_Feb_2022.7270c5c6.pdf",
     "static/media/SS1.png": "/static/media/SS1.d938bb92.png",
     "static/media/SS1.jpg": "/static/media/SS1.761ede55.jpg",
@@ -27,7 +27,9 @@
     "static/media/hearo.png": "/static/media/hearo.83ad7bf7.png",
     "static/media/igurme.png": "/static/media/igurme.34221fcd.png",
     "static/media/jamblr.png": "/static/media/jamblr.a1b95cdc.png",
+    "static/media/leftarrow.png": "/static/media/leftarrow.2eb7b215.png",
     "static/media/linkedin.svg": "/static/media/linkedin.246c4e83.svg",
+    "static/media/magglass.png": "/static/media/magglass.a670002b.png",
     "static/media/polysentry.png": "/static/media/polysentry.e4e3e085.png",
     "static/media/potencia.png": "/static/media/potencia.81917f51.png",
     "static/media/redorblue.png": "/static/media/redorblue.ae5a413f.png",
@@ -37,8 +39,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.4b850588.js",
-    "static/js/2.e41caac6.chunk.js",
-    "static/css/main.d51a889a.chunk.css",
-    "static/js/main.42b7ad46.chunk.js"
+    "static/js/2.9533ac5b.chunk.js",
+    "static/css/main.39b6a671.chunk.css",
+    "static/js/main.acbaa82a.chunk.js"
   ]
 }
