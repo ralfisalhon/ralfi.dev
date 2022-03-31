@@ -29,6 +29,7 @@ a {
   display: flex;
   width: 100vw;
   flex-direction: row;
+  scroll-behavior: smooth;
 }
 
 .content {
@@ -36,20 +37,26 @@ a {
   transition: 500ms ease-out;
   border: none;
   outline: none;
-  overflow: hidden;
-  height: 100vh;
+  /* overflow: hidden; */
+  height: 100%;
 }
 
 .row {
   display: flex;
   flex-direction: row;
 }
+
+@keyframes fadeInOpacity {
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
 .fade-in {
   opacity: 1;
   animation-name: fadeInOpacity;
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
 }
 
 .disable-selection {

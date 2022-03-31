@@ -4,11 +4,11 @@ export const Main = styled.div`
   background: var(--dark-color);
   display: flex;
   flex: 1;
-  height: 100vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  min-height: 100vh;
+  overflow: scroll;
 
   font-family: Montserrat;
 
@@ -23,7 +23,13 @@ export const Main = styled.div`
   font-size: 1.5rem;
 `;
 
-export const Wrapper = styled.div``;
+export const Wrapper = styled.div`
+  transition: height 1s ease-in-out;
+  height: ${({ height }) => height}vh;
+
+  display: flex;
+  flex-direction: column;
+`;
 
 const WIDTHS = [-8, 41, 146, 257, 365];
 export const Word = styled.div`
@@ -52,7 +58,10 @@ export const Word = styled.div`
     opacity: 0.9;
   }`
       : // After out of view
-        `opacity: 0.2; 
+        `opacity: 0.15; 
+        &:hover {
+          opacity: 0.5;
+        };
         ${
           currentIndex - 1 === index && `&::after { color: var(--dark-color); }`
         }
@@ -65,7 +74,7 @@ export const Words = styled.div`
   display: flex;
   flex-direction: row;
   position: relative;
-  padding: 10px 8px;
+  padding: 12px 8px 10px 8px;
   border: 1px solid var(--light-color);
   border-radius: 0.3rem;
   line-height: 1;
@@ -103,8 +112,7 @@ export const Name = styled.p`
 export const Content = styled.div`
   display: flex;
   flex-direction: row;
-  transition: 500ms;
-  height: 100px;
+  padding-bottom: 10px;
 `;
 
 export const SocialButtons = styled.span`
@@ -132,11 +140,44 @@ export const InfoBox = styled.div`
     color: var(--light-color);
     text-decoration-line: none;
   }
-
-  img {
-    width: 70px;
-    height: 70px;
-  }
 `;
 
 export const Resume = styled.div``;
+
+export const Emoji = styled.img`
+  transition: transform 1.5s;
+  transform: rotate(0deg);
+  transition-delay: 500ms;
+  ${({ index }) =>
+    index === 0 &&
+    `&:hover {
+    transform: rotate(360deg);
+  }`};
+`;
+
+export const Projects = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+
+  img {
+    width: 100px;
+    height: 100px;
+  }
+`;
+
+export const Project = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  border-radius: 20px;
+
+  transition: 500ms;
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  padding-right: 5px;
+  cursor: pointer;
+`;

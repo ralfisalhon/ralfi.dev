@@ -8,6 +8,9 @@ import {
   Content,
   SocialButtons,
   InfoBox,
+  Emoji,
+  Projects,
+  Project,
 } from './styles';
 
 import LinkedInLogo from 'assets/svg/linkedin.svg';
@@ -23,29 +26,27 @@ import PROJECTS from 'assets/data/projects';
 const isMobile = window.innerWidth < 700;
 
 export const NewHome = () => {
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(3);
 
   useEffect(() => {
-    const eyFn = function (e) {
+    const keydownFunction = function (e) {
       console.log(e.keyCode);
       switch (e.keyCode) {
         case 37: // Left Arrow
-        case 16: // Shift
+          // case 16: // Shift
           setIndex(prev => Math.max(prev - 1, 0));
           break;
         case 39: // Right Arrow
-        case 13: // Enter
+          // case 13: // Enter
           setIndex(prev => Math.min(prev + 1, 4));
           break;
         default:
           break;
       }
     };
-    document.addEventListener('keydown', eyFn);
-    return () => document.removeEventListener('keydown', eyFn);
+    document.addEventListener('keydown', keydownFunction);
+    return () => document.removeEventListener('keydown', keydownFunction);
   });
-
-  console.log({ index });
 
   return (
     <Main>
@@ -64,7 +65,7 @@ export const NewHome = () => {
           </span>
         </InfoBox>
       ) : (
-        <Wrapper>
+        <Wrapper height={index === 3 ? 80 : 20}>
           <Name index={index} onClick={() => setIndex(0)}>
             ralfi.dev
           </Name>
@@ -77,7 +78,8 @@ export const NewHome = () => {
               width={40}
               visible
             >
-              <img
+              <Emoji
+                index={index}
                 alt={index === 0 ? 'Magnifying Glass' : 'Left Arrow'}
                 src={index === 0 ? MAGGLASS : LEFTARROW}
                 style={{
@@ -107,7 +109,7 @@ export const NewHome = () => {
               width={102}
               color="white"
             >
-              Projects
+              Contact
             </Word>
             <Word
               index={3}
@@ -117,7 +119,7 @@ export const NewHome = () => {
               width={100}
               color="white"
             >
-              Contact
+              Projects
             </Word>
             <Word
               index={4}
@@ -144,22 +146,35 @@ export const NewHome = () => {
             )}
             {index === 2 && (
               <InfoBox>
-                {PROJECTS.map(proj => (
-                  <a
-                    key={proj.name}
-                    href={proj.platforms.appstore || proj.platforms.github}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    title={proj.name}
-                  >
-                    <img src={proj.logo} alt={proj.name}></img>
-                  </a>
-                ))}
+                <a href="mailto:ralfisalhon@gmail.com">ralfisalhon@gmail.com</a>
               </InfoBox>
             )}
             {index === 3 && (
               <InfoBox>
-                <a href="mailto:ralfisalhon@gmail.com">ralfisalhon@gmail.com</a>
+                <Projects>
+                  {PROJECTS.map(proj => (
+                    <a
+                      key={proj.name}
+                      href={proj.platforms.appstore || proj.platforms.github}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <Project className="fade-in">
+                        <img src={proj.logo} alt={proj.name}></img>
+                        <div
+                          style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: '5px',
+                          }}
+                        >
+                          <strong>{proj.name}</strong>
+                          <p>{proj.title}</p>
+                        </div>
+                      </Project>
+                    </a>
+                  ))}
+                </Projects>
               </InfoBox>
             )}
             {index === 4 && <InfoBox>WIP</InfoBox>}
