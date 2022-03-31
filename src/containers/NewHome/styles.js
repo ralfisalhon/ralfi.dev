@@ -8,8 +8,9 @@ export const Main = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 10px;
 
-  font-family: Avenir Next;
+  font-family: Montserrat;
 
   color: var(--light-color);
 
@@ -19,7 +20,7 @@ export const Main = styled.div`
     padding: 0px;
   }
   line-height: 1;
-  font-size: 2rem;
+  font-size: 1.5rem;
 `;
 
 export const Wrapper = styled.div``;
@@ -27,20 +28,19 @@ export const Wrapper = styled.div``;
 export const Words = styled.div`
   display: flex;
   flex-direction: row;
-  font-family: Avenir Next;
   position: relative;
-  padding: 8px;
+  padding: 10px 8px;
   border: 1px solid var(--light-color);
   border-radius: 0.3rem;
   line-height: 1;
-  width: 700px;
+  width: 600px;
   margin: 10px 0px 15px 0px;
 `;
 export const Word = styled.div`
   color: var(--light-color);
   ${({ selected, color }) => selected && `color: ${color}`};
 
-  transition: all 500ms ease-out;
+  transition: all 400ms ease-out;
   user-select: none;
   margin-left: ${({ index, currentIndex, width }) =>
     currentIndex > index ? `-${width}px` : '8px'};
@@ -63,7 +63,7 @@ export const Word = styled.div`
 `;
 
 export const Name = styled.p`
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 600;
   display: flex;
   flex-direction: row;
@@ -93,11 +93,11 @@ export const SocialButtons = styled.span`
 `;
 
 export const InfoBox = styled.div`
-  font-size: 1.5rem;
+  font-size: 1rem;
   gap: 10px;
   display: flex;
   flex-wrap: wrap;
-  width: 500px;
+  max-width: 400px;
   margin-right: 10px;
   a {
     color: var(--light-color);
@@ -105,8 +105,8 @@ export const InfoBox = styled.div`
   }
 
   img {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
   }
 `;
 

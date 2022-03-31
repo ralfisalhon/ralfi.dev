@@ -18,6 +18,8 @@ import SpotifyLogo from 'assets/svg/spotify.svg';
 import RESUME from 'assets/pdf/RRS_Resume_Feb_2022.pdf';
 import PROJECTS from 'assets/data/projects';
 
+const isMobile = window.innerWidth < 700;
+
 export const NewHome = () => {
   const [index, setIndex] = useState(0);
 
@@ -43,136 +45,152 @@ export const NewHome = () => {
 
   return (
     <Main>
-      <Wrapper>
-        <Name index={index} onClick={() => setIndex(0)}>
-          ralfi.dev
-        </Name>
-        <Words>
-          <Word
-            index={0}
-            currentIndex={index}
-            selected={index === 0}
-            onClick={() => setIndex(0)}
-            width={50}
-            visible
-          >
-            <span role="img" aria-label="" style={{ marginRight: '8px' }}>
-              {index === 0 ? '🔎' : '⬅️'}
-            </span>
-          </Word>
+      {isMobile ? (
+        <InfoBox style={{ fontSize: '1rem' }}>
+          The new ralfi.dev isn't ready for mobile yet.
+          <span>
+            <br />
+            Contact:
+            <a
+              href="mailto:ralfisalhon@gmail.com"
+              style={{ marginLeft: '5px' }}
+            >
+              <strong>ralfisalhon@gmail.com</strong>
+            </a>
+          </span>
+        </InfoBox>
+      ) : (
+        <Wrapper>
+          <Name index={index} onClick={() => setIndex(0)}>
+            ralfi.dev
+          </Name>
+          <Words>
+            <Word
+              index={0}
+              currentIndex={index}
+              selected={index === 0}
+              onClick={() => setIndex(0)}
+              width={40}
+              visible
+            >
+              <span role="img" aria-label="" style={{ marginRight: '8px' }}>
+                {index === 0 ? '🔎' : '⬅️'}
+              </span>
+            </Word>
 
-          <Word
-            index={1}
-            currentIndex={index}
-            selected={index === 1}
-            onClick={() => setIndex(1)}
-            width={122}
-            color="white"
-          >
-            Resume,
-          </Word>
-          <Word
-            index={2}
-            currentIndex={index}
-            selected={index === 2}
-            onClick={() => setIndex(2)}
-            width={125}
-            color="white"
-          >
-            Projects,
-          </Word>
-          <Word
-            index={3}
-            currentIndex={index}
-            selected={index === 3}
-            onClick={() => setIndex(3)}
-            width={122}
-            color="white"
-          >
-            Contact,
-          </Word>
-          <Word
-            index={4}
-            currentIndex={index}
-            selected={index === 4}
-            onClick={() => setIndex(4)}
-            width={50}
-            color="white"
-          >
-            Fun
-          </Word>
-        </Words>
-        <Content>
-          {index === 1 && (
-            <InfoBox>
-              <a href={RESUME} target="_blank" rel="noopener noreferrer">
-                View
-              </a>
-              <p style={{ userSelect: 'none' }}>|</p>
-              <a href={RESUME} download>
-                Download
-              </a>
-            </InfoBox>
-          )}
-          {index === 2 && (
-            <InfoBox>
-              {PROJECTS.map(proj => (
-                <a
-                  key={proj.name}
-                  href={proj.platforms.github}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  title={proj.name}
-                >
-                  <img src={proj.logo} alt={proj.name}></img>
+            <Word
+              index={1}
+              currentIndex={index}
+              selected={index === 1}
+              onClick={() => setIndex(index !== 1 ? 1 : 0)}
+              width={105}
+              color="white"
+            >
+              Resume,
+            </Word>
+            <Word
+              index={2}
+              currentIndex={index}
+              selected={index === 2}
+              onClick={() => setIndex(index !== 2 ? 2 : 0)}
+              width={102}
+              color="white"
+            >
+              Projects,
+            </Word>
+            <Word
+              index={3}
+              currentIndex={index}
+              selected={index === 3}
+              onClick={() => setIndex(index !== 3 ? 3 : 0)}
+              width={100}
+              color="white"
+            >
+              Contact,
+            </Word>
+            <Word
+              index={4}
+              currentIndex={index}
+              selected={index === 4}
+              onClick={() => setIndex(index !== 4 ? 4 : 0)}
+              width={50}
+              color="white"
+            >
+              Fun
+            </Word>
+          </Words>
+          <Content>
+            {index === 1 && (
+              <InfoBox>
+                <a href={RESUME} target="_blank" rel="noopener noreferrer">
+                  View
                 </a>
-              ))}
-            </InfoBox>
-          )}
-          {index === 3 && (
-            <InfoBox>
-              <a href="mailto:ralfisalhon@gmail.com">ralfisalhon@gmail.com</a>
-            </InfoBox>
-          )}
-          {index === 4 && <InfoBox>WIP</InfoBox>}
-          <SocialButtons>
-            <img
-              src={LinkedInLogo}
-              alt="LinkedIn Logo"
-              onClick={() =>
-                window.open('https://www.linkedin.com/in/ralfisalhon/')
-              }
-              title="LinkedIn"
-            />
-            <img
-              src={GithubLogo}
-              alt="Github Logo"
-              onClick={() => window.open('https://github.com/ralfisalhon')}
-              title="Github"
-            />
-            <img
-              src={SpotifyLogo}
-              alt="Spotify Logo"
-              onClick={() =>
-                window.open(
-                  'https://open.spotify.com/user/pnoig1591pjau15ah9ja412k6'
-                )
-              }
-              title="Spotify"
-            />
-            <img
-              src={YoutubeLogo}
-              alt="Youtube Logo"
-              onClick={() =>
-                window.open(
-                  'https://www.youtube.com/channel/UCZOm0qLlSm19QyvAc_rsOmQ?view_as=subscriber'
-                )
-              }
-              title="Youtube"
-            />
-          </SocialButtons>
-        </Content>
-      </Wrapper>
+                <p style={{ userSelect: 'none' }}>|</p>
+                <a href={RESUME} download>
+                  Download
+                </a>
+              </InfoBox>
+            )}
+            {index === 2 && (
+              <InfoBox>
+                {PROJECTS.map(proj => (
+                  <a
+                    key={proj.name}
+                    href={proj.platforms.appstore || proj.platforms.github}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    title={proj.name}
+                  >
+                    <img src={proj.logo} alt={proj.name}></img>
+                  </a>
+                ))}
+              </InfoBox>
+            )}
+            {index === 3 && (
+              <InfoBox>
+                <a href="mailto:ralfisalhon@gmail.com">ralfisalhon@gmail.com</a>
+              </InfoBox>
+            )}
+            {index === 4 && <InfoBox>WIP</InfoBox>}
+            <SocialButtons>
+              <img
+                src={LinkedInLogo}
+                alt="LinkedIn Logo"
+                onClick={() =>
+                  window.open('https://www.linkedin.com/in/ralfisalhon/')
+                }
+                title="LinkedIn"
+              />
+              <img
+                src={GithubLogo}
+                alt="Github Logo"
+                onClick={() => window.open('https://github.com/ralfisalhon')}
+                title="Github"
+              />
+              <img
+                src={SpotifyLogo}
+                alt="Spotify Logo"
+                onClick={() =>
+                  window.open(
+                    'https://open.spotify.com/user/pnoig1591pjau15ah9ja412k6'
+                  )
+                }
+                title="Spotify"
+              />
+              <img
+                src={YoutubeLogo}
+                alt="Youtube Logo"
+                onClick={() =>
+                  window.open(
+                    'https://www.youtube.com/channel/UCZOm0qLlSm19QyvAc_rsOmQ?view_as=subscriber'
+                  )
+                }
+                title="Youtube"
+              />
+            </SocialButtons>
+          </Content>
+        </Wrapper>
+      )}
     </Main>
   );
 };
