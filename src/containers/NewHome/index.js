@@ -14,6 +14,8 @@ import LinkedInLogo from 'assets/svg/linkedin.svg';
 import YoutubeLogo from 'assets/svg/youtube.svg';
 import GithubLogo from 'assets/svg/github.svg';
 import SpotifyLogo from 'assets/svg/spotify.svg';
+import MAGGLASS from 'assets/images/magglass.png';
+import LEFTARROW from 'assets/images/leftarrow.png';
 
 import RESUME from 'assets/pdf/RRS_Resume_Feb_2022.pdf';
 import PROJECTS from 'assets/data/projects';
@@ -73,9 +75,16 @@ export const NewHome = () => {
               width={40}
               visible
             >
-              <span role="img" aria-label="" style={{ marginRight: '8px' }}>
-                {index === 0 ? '🔎' : '⬅️'}
-              </span>
+              <img
+                alt={index === 0 ? 'Magnifying Glass' : 'Left Arrow'}
+                src={index === 0 ? MAGGLASS : LEFTARROW}
+                style={{
+                  lineHeight: 1,
+                  margin: 0,
+                  height: '1.5rem',
+                  marginRight: '8px',
+                }}
+              />
             </Word>
 
             <Word

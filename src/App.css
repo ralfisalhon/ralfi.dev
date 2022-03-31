@@ -36,6 +36,8 @@ a {
   transition: 500ms ease-out;
   border: none;
   outline: none;
+  overflow: hidden;
+  height: 100vh;
 }
 
 .row {
