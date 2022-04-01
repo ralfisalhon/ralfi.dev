@@ -26,6 +26,7 @@ export const Main = styled.div`
 export const Wrapper = styled.div`
   transition: height 1s ease-in-out;
   height: ${({ height }) => height}vh;
+  ${({ delay }) => delay && `transition-delay: 500ms`};
 
   display: flex;
   flex-direction: column;
@@ -112,7 +113,7 @@ export const Name = styled.p`
 export const Content = styled.div`
   display: flex;
   flex-direction: row;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 `;
 
 export const SocialButtons = styled.span`

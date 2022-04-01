@@ -65,7 +65,7 @@ export const NewHome = () => {
           </span>
         </InfoBox>
       ) : (
-        <Wrapper height={index === 3 ? 80 : 20}>
+        <Wrapper height={index === 3 ? 60 : 20} delay={index === 3}>
           <Name index={index} onClick={() => setIndex(0)}>
             ralfi.dev
           </Name>
