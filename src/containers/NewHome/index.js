@@ -22,6 +22,7 @@ import LEFTARROW from 'assets/images/leftarrow.png';
 
 import RESUME from 'assets/pdf/RRS_Resume_Feb_2022.pdf';
 import PROJECTS from 'assets/data/projects';
+import './gradient.css';
 
 const isMobile = window.innerWidth < 700;
 
@@ -69,69 +70,72 @@ export const NewHome = () => {
           <Name index={index} onClick={() => setIndex(0)}>
             ralfi.dev
           </Name>
-          <Words index={index}>
-            <Word
-              index={0}
-              currentIndex={index}
-              selected={index === 0}
-              onClick={() => setIndex(0)}
-              width={40}
-              visible
-            >
-              <Emoji
-                index={index}
-                alt={index === 0 ? 'Magnifying Glass' : 'Left Arrow'}
-                src={index === 0 ? MAGGLASS : LEFTARROW}
-                style={{
-                  lineHeight: 1,
-                  margin: 0,
-                  height: '1.5rem',
-                  marginRight: index > 1 ? '0px' : '8px',
-                }}
-              />
-            </Word>
+          <div className="gradient-border">
+            <Words index={index}>
+              <Word
+                index={0}
+                currentIndex={index}
+                selected={index === 0}
+                onClick={() => setIndex(0)}
+                width={40}
+                visible
+              >
+                <Emoji
+                  index={index}
+                  alt={index === 0 ? 'Magnifying Glass' : 'Left Arrow'}
+                  src={index === 0 ? MAGGLASS : LEFTARROW}
+                  style={{
+                    lineHeight: 1,
+                    margin: 0,
+                    height: '1.5rem',
+                    marginRight: index > 1 ? '0px' : '8px',
+                  }}
+                />
+              </Word>
 
-            <Word
-              index={1}
-              currentIndex={index}
-              selected={index === 1}
-              onClick={() => setIndex(index !== 1 ? 1 : 0)}
-              width={105}
-              color="white"
-            >
-              Resume
-            </Word>
-            <Word
-              index={2}
-              currentIndex={index}
-              selected={index === 2}
-              onClick={() => setIndex(index !== 2 ? 2 : 0)}
-              width={102}
-              color="white"
-            >
-              Contact
-            </Word>
-            <Word
-              index={3}
-              currentIndex={index}
-              selected={index === 3}
-              onClick={() => setIndex(index !== 3 ? 3 : 0)}
-              width={100}
-              color="white"
-            >
-              Projects
-            </Word>
-            <Word
-              index={4}
-              currentIndex={index}
-              selected={index === 4}
-              onClick={() => setIndex(index !== 4 ? 4 : 0)}
-              width={50}
-              color="white"
-            >
-              Fun
-            </Word>
-          </Words>
+              <Word
+                index={1}
+                currentIndex={index}
+                selected={index === 1}
+                onClick={() => setIndex(index !== 1 ? 1 : 0)}
+                width={105}
+                color="white"
+              >
+                Resume
+              </Word>
+              <Word
+                index={2}
+                currentIndex={index}
+                selected={index === 2}
+                onClick={() => setIndex(index !== 2 ? 2 : 0)}
+                width={102}
+                color="white"
+              >
+                Contact
+              </Word>
+              <Word
+                index={3}
+                currentIndex={index}
+                selected={index === 3}
+                onClick={() => setIndex(index !== 3 ? 3 : 0)}
+                width={100}
+                color="white"
+              >
+                Projects
+              </Word>
+              <Word
+                index={4}
+                currentIndex={index}
+                selected={index === 4}
+                onClick={() => setIndex(index !== 4 ? 4 : 0)}
+                width={50}
+                color="white"
+              >
+                Fun
+              </Word>
+              {/* </div> */}
+            </Words>
+          </div>
           <Content>
             {index === 1 && (
               <InfoBox>

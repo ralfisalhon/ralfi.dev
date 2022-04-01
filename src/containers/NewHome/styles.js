@@ -45,8 +45,6 @@ export const Word = styled.div`
 
   ${({ selected }) => !selected && `cursor: pointer`};
 
-  z-index: ${({ visible }) => (visible ? 1 : 0)};
-
   // Default non-hovered
   opacity: 0.5;
   ${({ selected, currentIndex, index }) =>
@@ -76,11 +74,10 @@ export const Words = styled.div`
   flex-direction: row;
   position: relative;
   padding: 12px 8px 10px 8px;
-  border: 1px solid var(--light-color);
-  border-radius: 0.3rem;
   line-height: 1;
   width: 600px;
-  margin: 10px 0px 15px 0px;
+  background: var(--dark-color);
+  border-radius: 4px;
 
   ::after {
     color: var(--light-color);
