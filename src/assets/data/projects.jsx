@@ -139,7 +139,7 @@ const PROJECTS = [
     wideSS: true,
   },
   {
-    name: 'CoverLove',
+    name: 'coverlove',
     logo: coverloveLogo,
     color: '#d35400',
     title: 'A simple tool to create new playlist cover art.',

@@ -48,7 +48,7 @@ export const Word = styled.div`
 
   // Default non-hovered
   opacity: 0.5;
-  ${({ selected, currentIndex, index }) =>
+  ${({ selected, currentIndex, index, visible }) =>
     selected
       ? // Selected
         `opacity: 1;`
@@ -57,7 +57,7 @@ export const Word = styled.div`
         `&:hover {
     opacity: 0.9;
   }`
-      : // After out of view
+      : !visible && // After out of view
         `opacity: 0.15; 
         &:hover {
           opacity: 0.5;

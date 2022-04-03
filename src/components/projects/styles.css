@@ -1,0 +1,200 @@
+
+.base p {
+  color: var(--light-color);
+}
+
+.base a {
+  text-decoration-line: none;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.round_icon {
+  width: 100px;
+  height: 100px;
+  -webkit-filter: drop-shadow(0 0 0.75rem gray);
+  filter: drop-shadow(0 0 0.75rem gray);
+  cursor: pointer;
+}
+
+.centertext {
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 5vw);
+  transform: translate(-50%, -50%);
+  opacity: 1 !important;
+}
+
+.centertext-mobile {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  overflow: hidden;
+}
+
+:root {
+  --duration: 60s;
+}
+
+.base {
+  width: 580px;
+  height: 580px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin-left: -210px;
+  margin-top: -270px;
+  position: absolute;
+  border-radius: 50%;
+
+
+  -webkit-animation-name: spin;
+  -webkit-animation-duration: var(--duration);
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: spin;
+  -moz-animation-duration: var(--duration);
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: spin;
+  -ms-animation-duration: var(--duration);
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+
+  animation-name: spin;
+  animation-duration: var(--duration);
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  pointer-events: none;
+}
+
+.item {
+  position: absolute;
+  font-family: Arial;
+  font-size: 85px;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+
+  -webkit-animation-name: spin;
+  -webkit-animation-duration: var(--duration);
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-direction: reverse;
+  -moz-animation-name: spin;
+  -moz-animation-duration: var(--duration);
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -moz-animation-direction: reverse;
+  -ms-animation-name: spin;
+  -ms-animation-duration: var(--duration);
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+  -ms-animation-direction: reverse;
+
+  animation-name: spin;
+  animation-duration: var(--duration);
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: reverse;
+
+  pointer-events: auto;
+}
+
+.base:hover .item {
+  opacity: 0.5;
+}
+
+.item:hover {
+  opacity: 1 !important;
+}
+
+.item-1 {
+  top: calc(50% - 50px);
+  left: calc(100% - 100px);
+}
+
+.item-2 {
+  top: 0px;
+  left: calc(50% - 50px);
+}
+
+.item-3 {
+  top: calc(50% - 50px);
+  left: 0px;
+}
+
+.item-4 {
+  top: calc(100% - 100px);
+  left: calc(50% - 50px);
+}
+
+.item-5 {
+  top: calc(84% - 75px);
+  left: calc(84% - 75px);
+}
+
+.item-6 {
+  top: calc(84% - 75px);
+  left: calc(16% - 33px);
+}
+
+.item-7 {
+  top: calc(16% - 33px);
+  left: calc(84% - 75px);
+}
+
+.item-8 {
+  top: calc(16% - 33px);
+  left: calc(16% - 33px);
+}
+
+@-ms-keyframes spin {
+  from {
+    -ms-transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.footer-mobile {
+  display: flex;
+  flex-direction: row;
+  min-height: 35px;
+}

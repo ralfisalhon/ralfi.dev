@@ -9,8 +9,8 @@ import {
   SocialButtons,
   InfoBox,
   Emoji,
-  Projects,
-  Project,
+  // Projects,
+  // Project,
 } from './styles';
 
 import LinkedInLogo from 'assets/svg/linkedin.svg';
@@ -21,9 +21,9 @@ import MAGGLASS from 'assets/images/magglass.png';
 import LEFTARROW from 'assets/images/leftarrow.png';
 
 import RESUME from 'assets/pdf/RRS_Resume_Feb_2022.pdf';
-import PROJECTS from 'assets/data/projects';
 import './gradient.css';
-import ResumePage from 'containers/resume';
+import ResumePage from 'components/resume';
+import FloatingProjects from 'components/projects';
 
 const isMobile = window.innerWidth < 700;
 
@@ -34,17 +34,9 @@ export const NewHome = () => {
   const [showResume, setShowResume] = useState(false);
   const [resumeHeight, setResumeHeight] = useState(window.innerHeight * 1.25);
   const [resumeLoaded, setResumeLoaded] = useState(false);
-  const [keepHeight, setKeepHeight] = useState(false);
 
   useEffect(() => {
-    setShowResume(prev => {
-      if (prev === true && index === 3) {
-        setKeepHeight(true);
-      } else {
-        setKeepHeight(false);
-      }
-      return false;
-    });
+    setShowResume(false);
   }, [index]);
 
   useEffect(() => {
@@ -85,7 +77,7 @@ export const NewHome = () => {
         </InfoBox>
       ) : (
         <Wrapper
-          height={(index === 1 && showResume) || keepHeight ? 90 : 20}
+          height={index === 1 && showResume ? 90 : 20}
           animationDelay={index === 1 && showResume ? RESUME_LOAD_DELAY : 50}
         >
           <Name index={index} onClick={() => setIndex(0)}>
@@ -141,9 +133,15 @@ export const NewHome = () => {
                 onClick={() => setIndex(index !== 3 ? 3 : 0)}
                 width={100}
                 color="white"
+                style={{ position: 'relative' }}
               >
                 Projects
               </Word>
+              {index === 3 && (
+                <div className="fade-in">
+                  <FloatingProjects />
+                </div>
+              )}
               <Word
                 index={4}
                 currentIndex={index}
@@ -189,12 +187,12 @@ export const NewHome = () => {
                 </InfoBox>
                 {showResume && (
                   <InfoBox className="fade-in" style={{ marginTop: '10px' }}>
-                    <p style={{ userSelect: 'none' }}>> </p>
+                    <p style={{ userSelect: 'none' }}>{'>'} </p>
                     <p
                       style={{ cursor: 'pointer' }}
                       onClick={() =>
                         setResumeHeight(prev =>
-                          Math.max(prev - window.innerHeight * 0.2, 250)
+                          Math.max(prev - window.innerHeight * 0.2, 650)
                         )
                       }
                     >
@@ -223,7 +221,18 @@ export const NewHome = () => {
                 <a href="mailto:ralfisalhon@gmail.com">ralfisalhon@gmail.com</a>
               </InfoBox>
             )}
-            {(index === 4 || index === 3) && (
+            {index === 3 && (
+              <InfoBox style={{ color: 'gray' }}>
+                <a
+                  href="https://github.com/ralfisalhon"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Github://ralfisalhon
+                </a>
+              </InfoBox>
+            )}
+            {index === 4 && (
               <InfoBox style={{ color: 'gray' }}>
                 {`// 🚜 Under construction`}
               </InfoBox>
@@ -266,34 +275,6 @@ export const NewHome = () => {
             </SocialButtons>
           </Content>
           {index === 1 && showResume && <ResumePage height={resumeHeight} />}
-          {index === 3 && (
-            <InfoBox style={{ maxWidth: '600px', paddingBottom: '20px' }}>
-              <Projects>
-                {PROJECTS.map(proj => (
-                  <a
-                    key={proj.name}
-                    href={proj.platforms.appstore || proj.platforms.github}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    <Project className="fade-in">
-                      <img src={proj.logo} alt={proj.name}></img>
-                      <div
-                        style={{
-                          display: 'flex',
-                          flexDirection: 'column',
-                          gap: '5px',
-                        }}
-                      >
-                        <strong>{proj.name}</strong>
-                        <p>{proj.title}</p>
-                      </div>
-                    </Project>
-                  </a>
-                ))}
-              </Projects>
-            </InfoBox>
-          )}
         </Wrapper>
       )}
     </Main>
