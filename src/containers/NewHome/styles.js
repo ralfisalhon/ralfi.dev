@@ -76,7 +76,7 @@ export const Words = styled.div`
   position: relative;
   padding: 12px 8px 10px 8px;
   line-height: 1;
-  width: 600px;
+  width: 525px;
   background: var(--dark-color);
   border-radius: 4px;
 
@@ -133,7 +133,6 @@ export const InfoBox = styled.div`
   gap: 10px;
   display: flex;
   flex-wrap: wrap;
-  max-width: 400px;
   margin-right: 10px;
   a {
     color: var(--light-color);

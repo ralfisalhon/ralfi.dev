@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './styles.css';
 
-import { Link } from 'react-router-dom';
-
 import coverlove from 'assets/images/round_icons/coverlove.png';
 import hearo from 'assets/images/round_icons/hearo.png';
 import igurme from 'assets/images/round_icons/igurme.png';

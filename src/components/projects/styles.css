@@ -39,20 +39,22 @@
 
 :root {
   --duration: 60s;
+  --size: 800px;
 }
 
 .base {
-  width: 580px;
-  height: 580px;
+  width: var(--size);
+  height: var(--size);
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  margin-left: -210px;
-  margin-top: -270px;
+  margin-left: -130px;
+  margin-top: -380px;
   position: absolute;
   border-radius: 50%;
+  /* border: 1px solid white; */
 
 
   -webkit-animation-name: spin;
@@ -110,7 +112,18 @@
 }
 
 .base:hover .item {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
   opacity: 0.5;
+}
+
+.base:hover {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
 }
 
 .item:hover {
