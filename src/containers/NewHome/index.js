@@ -23,11 +23,29 @@ import LEFTARROW from 'assets/images/leftarrow.png';
 import RESUME from 'assets/pdf/RRS_Resume_Feb_2022.pdf';
 import PROJECTS from 'assets/data/projects';
 import './gradient.css';
+import ResumePage from 'containers/resume';
 
 const isMobile = window.innerWidth < 700;
 
+const RESUME_LOAD_DELAY = 150;
+
 export const NewHome = () => {
   const [index, setIndex] = useState(0);
+  const [showResume, setShowResume] = useState(false);
+  const [resumeHeight, setResumeHeight] = useState(window.innerHeight * 1.25);
+  const [resumeLoaded, setResumeLoaded] = useState(false);
+  const [keepHeight, setKeepHeight] = useState(false);
+
+  useEffect(() => {
+    setShowResume(prev => {
+      if (prev === true && index === 3) {
+        setKeepHeight(true);
+      } else {
+        setKeepHeight(false);
+      }
+      return false;
+    });
+  }, [index]);
 
   useEffect(() => {
     const keydownFunction = function (e) {
@@ -38,7 +56,7 @@ export const NewHome = () => {
           setIndex(prev => Math.max(prev - 1, 0));
           break;
         case 39: // Right Arrow
-          // case 13: // Enter
+        case 13: // Enter
           setIndex(prev => Math.min(prev + 1, 4));
           break;
         default:
@@ -67,8 +85,8 @@ export const NewHome = () => {
         </InfoBox>
       ) : (
         <Wrapper
-          height={index === 3 ? 60 : 20}
-          animationDelay={index === 3 ? 500 : 50}
+          height={(index === 1 && showResume) || keepHeight ? 90 : 20}
+          animationDelay={index === 1 && showResume ? RESUME_LOAD_DELAY : 50}
         >
           <Name index={index} onClick={() => setIndex(0)}>
             ralfi.dev
@@ -136,55 +154,80 @@ export const NewHome = () => {
               >
                 Fun
               </Word>
-              {/* </div> */}
             </Words>
           </div>
           <Content>
             {index === 1 && (
-              <InfoBox>
-                <a href={RESUME} target="_blank" rel="noopener noreferrer">
-                  View
-                </a>
-                <p style={{ userSelect: 'none' }}>|</p>
-                <a href={RESUME} download>
-                  Download
-                </a>
-              </InfoBox>
+              <div style={{ userSelect: 'none' }}>
+                <InfoBox
+                  style={{
+                    opacity: showResume && resumeLoaded ? '0.3' : '1',
+                    transition: '500ms',
+                  }}
+                >
+                  <p
+                    style={{
+                      cursor: 'pointer',
+                      textDecorationLine: showResume ? 'underline' : 'none',
+                      textDecorationColor: 'var(--light-color)',
+                    }}
+                    onClick={() => {
+                      if (!showResume) {
+                        setTimeout(() => {
+                          setResumeLoaded(true);
+                        }, RESUME_LOAD_DELAY);
+                      }
+                      setShowResume(prev => !prev);
+                    }}
+                  >
+                    View
+                  </p>
+                  <p style={{ userSelect: 'none' }}>|</p>
+                  <a href={RESUME} download>
+                    Download
+                  </a>
+                </InfoBox>
+                {showResume && (
+                  <InfoBox className="fade-in" style={{ marginTop: '10px' }}>
+                    <p style={{ userSelect: 'none' }}>> </p>
+                    <p
+                      style={{ cursor: 'pointer' }}
+                      onClick={() =>
+                        setResumeHeight(prev =>
+                          Math.max(prev - window.innerHeight * 0.2, 250)
+                        )
+                      }
+                    >
+                      Smaller
+                    </p>
+                    <p style={{ userSelect: 'none' }}>|</p>
+                    <p
+                      style={{ cursor: 'pointer' }}
+                      onClick={() =>
+                        setResumeHeight(prev =>
+                          Math.min(
+                            prev + window.innerHeight * 0.2,
+                            window.innerHeight * 2
+                          )
+                        )
+                      }
+                    >
+                      Bigger
+                    </p>
+                  </InfoBox>
+                )}
+              </div>
             )}
             {index === 2 && (
               <InfoBox>
                 <a href="mailto:ralfisalhon@gmail.com">ralfisalhon@gmail.com</a>
               </InfoBox>
             )}
-            {index === 3 && (
-              <InfoBox>
-                <Projects>
-                  {PROJECTS.map(proj => (
-                    <a
-                      key={proj.name}
-                      href={proj.platforms.appstore || proj.platforms.github}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      <Project className="fade-in">
-                        <img src={proj.logo} alt={proj.name}></img>
-                        <div
-                          style={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            gap: '5px',
-                          }}
-                        >
-                          <strong>{proj.name}</strong>
-                          <p>{proj.title}</p>
-                        </div>
-                      </Project>
-                    </a>
-                  ))}
-                </Projects>
+            {(index === 4 || index === 3) && (
+              <InfoBox style={{ color: 'gray' }}>
+                {`// 🚜 Under construction`}
               </InfoBox>
             )}
-            {index === 4 && <InfoBox>WIP</InfoBox>}
             <SocialButtons>
               <img
                 src={LinkedInLogo}
@@ -222,6 +265,35 @@ export const NewHome = () => {
               />
             </SocialButtons>
           </Content>
+          {index === 1 && showResume && <ResumePage height={resumeHeight} />}
+          {index === 3 && (
+            <InfoBox style={{ maxWidth: '600px', paddingBottom: '20px' }}>
+              <Projects>
+                {PROJECTS.map(proj => (
+                  <a
+                    key={proj.name}
+                    href={proj.platforms.appstore || proj.platforms.github}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <Project className="fade-in">
+                      <img src={proj.logo} alt={proj.name}></img>
+                      <div
+                        style={{
+                          display: 'flex',
+                          flexDirection: 'column',
+                          gap: '5px',
+                        }}
+                      >
+                        <strong>{proj.name}</strong>
+                        <p>{proj.title}</p>
+                      </div>
+                    </Project>
+                  </a>
+                ))}
+              </Projects>
+            </InfoBox>
+          )}
         </Wrapper>
       )}
     </Main>
