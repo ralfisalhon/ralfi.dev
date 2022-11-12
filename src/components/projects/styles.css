@@ -13,12 +13,15 @@
   justify-content: space-evenly;
 }
 
+.drop-glow {
+  filter: drop-shadow(0 0 0.75rem gray);
+}
+
 .round_icon {
   width: 100px;
   height: 100px;
-  -webkit-filter: drop-shadow(0 0 0.75rem gray);
-  filter: drop-shadow(0 0 0.75rem gray);
   cursor: pointer;
+  filter: drop-shadow(0 0 0.75rem #2f3640); 
 }
 
 .centertext {
@@ -38,7 +41,6 @@
 }
 
 :root {
-  --duration: 60s;
   --size: 800px;
 }
 
@@ -50,17 +52,17 @@
   left: 0;
   bottom: 0;
   right: 0;
-  margin-left: -130px;
+  margin-left: -135px;
   margin-top: -380px;
   position: absolute;
   border-radius: 50%;
   /* border: 1px solid white; */
 
 
-  animation-delay: -2.5s;
+  animation-delay: -2s;
   animation-name: spin;
-  animation-duration: var(--duration);
-  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  /* animation-iteration-count: infinite; */
   animation-timing-function: linear;
 
   pointer-events: none;
@@ -74,9 +76,9 @@
   width: 100px;
   height: 100px;
 
-  animation-delay: -2.5s;
+  animation-delay: -2s;
   animation-name: spin;
-  animation-duration: var(--duration);
+  animation-fill-mode: forwards;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-direction: reverse;
@@ -84,84 +86,61 @@
   pointer-events: auto;
 }
 
+
+
 .base:hover .item {
-  animation-play-state: paused;
+  /* animation-play-state: paused; */
   opacity: 0.5;
+
 }
 
 .base:hover {
-  animation-play-state: paused;
+  /* animation-play-state: paused; */
 }
 
 .item:hover {
   opacity: 1 !important;
+  filter: drop-shadow(0 0 0.75rem gray);
 }
 
-.item-1 {
+.item-8 {
   top: calc(50% - 50px);
   left: calc(100% - 100px);
 }
 
-.item-2 {
+.item-6 {
   top: 0px;
   left: calc(50% - 50px);
 }
 
-.item-3 {
-  top: calc(50% - 50px);
+.item-4 {
+  top: calc(50% - 54px);
   left: 0px;
 }
 
-.item-4 {
+.item-2 {
   top: calc(100% - 100px);
-  left: calc(50% - 50px);
+  left: calc(50% - 54px);
 }
 
-.item-5 {
+.item-1 {
   top: calc(84% - 75px);
-  left: calc(84% - 75px);
+  left: calc(84% - 79px);
 }
 
-.item-6 {
-  top: calc(84% - 75px);
+.item-3 {
+  top: calc(84% - 71px);
   left: calc(16% - 33px);
 }
 
 .item-7 {
   top: calc(16% - 33px);
-  left: calc(84% - 75px);
+  left: calc(84% - 67px);
 }
 
-.item-8 {
-  top: calc(16% - 33px);
+.item-5 {
+  top: calc(16% - 37px);
   left: calc(16% - 33px);
-}
-
-@-ms-keyframes spin {
-  from {
-    -ms-transform: rotate(0deg);
-  }
-  to {
-    -ms-transform: rotate(360deg);
-  }
-}
-
-@-moz-keyframes spin {
-  from {
-    -moz-transform: rotate(0deg);
-  }
-  to {
-    -moz-transform: rotate(360deg);
-  }
-}
-
-@-webkit-keyframes spin {
-  from {
-    -webkit-transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-  }
 }
 
 @keyframes spin {

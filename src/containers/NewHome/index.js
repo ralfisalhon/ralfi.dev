@@ -9,8 +9,6 @@ import {
   SocialButtons,
   InfoBox,
   Emoji,
-  // Projects,
-  // Project,
 } from './styles';
 
 import LinkedInLogo from 'assets/svg/linkedin.svg';
@@ -23,17 +21,22 @@ import LEFTARROW from 'assets/images/leftarrow.png';
 import RESUME from 'assets/pdf/RRS_Resume_Feb_2022.pdf';
 import './gradient.css';
 import ResumePage from 'components/resume';
-import FloatingProjects from 'components/projects';
+import { FloatingProjects } from 'components/projects';
 
 const isMobile = window.innerWidth < 700;
 
 const RESUME_LOAD_DELAY = 150;
 
 export const NewHome = () => {
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(3);
   const [showResume, setShowResume] = useState(false);
   const [resumeHeight, setResumeHeight] = useState(window.innerHeight * 1.25);
   const [resumeLoaded, setResumeLoaded] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    setIsPaused(false);
+  }, [index]);
 
   useEffect(() => {
     setShowResume(false);
@@ -79,11 +82,12 @@ export const NewHome = () => {
         <Wrapper
           height={index === 1 && showResume ? 90 : 20}
           animationDelay={index === 1 && showResume ? RESUME_LOAD_DELAY : 50}
+          isPaused={isPaused}
         >
           <Name index={index} onClick={() => setIndex(0)}>
             ralfi.dev
           </Name>
-          <div className="gradient-border">
+          <div className="gradient-border" style={{ width: '525px' }}>
             <Words index={index}>
               <Word
                 index={0}
@@ -139,7 +143,10 @@ export const NewHome = () => {
               </Word>
               {index === 3 && (
                 <div className="fade-in">
-                  <FloatingProjects />
+                  <FloatingProjects
+                    isPaused={isPaused}
+                    setIsPaused={setIsPaused}
+                  />
                 </div>
               )}
               <Word
@@ -237,42 +244,44 @@ export const NewHome = () => {
                 {`// 🚜 Under construction`}
               </InfoBox>
             )}
-            <SocialButtons>
-              <img
-                src={LinkedInLogo}
-                alt="LinkedIn Logo"
-                onClick={() =>
-                  window.open('https://www.linkedin.com/in/ralfisalhon/')
-                }
-                title="LinkedIn"
-              />
-              <img
-                src={GithubLogo}
-                alt="Github Logo"
-                onClick={() => window.open('https://github.com/ralfisalhon')}
-                title="Github"
-              />
-              <img
-                src={SpotifyLogo}
-                alt="Spotify Logo"
-                onClick={() =>
-                  window.open(
-                    'https://open.spotify.com/user/pnoig1591pjau15ah9ja412k6'
-                  )
-                }
-                title="Spotify"
-              />
-              <img
-                src={YoutubeLogo}
-                alt="Youtube Logo"
-                onClick={() =>
-                  window.open(
-                    'https://www.youtube.com/channel/UCZOm0qLlSm19QyvAc_rsOmQ?view_as=subscriber'
-                  )
-                }
-                title="Youtube"
-              />
-            </SocialButtons>
+            {!isPaused && (
+              <SocialButtons>
+                <img
+                  src={LinkedInLogo}
+                  alt="LinkedIn Logo"
+                  onClick={() =>
+                    window.open('https://www.linkedin.com/in/ralfisalhon/')
+                  }
+                  title="LinkedIn"
+                />
+                <img
+                  src={GithubLogo}
+                  alt="Github Logo"
+                  onClick={() => window.open('https://github.com/ralfisalhon')}
+                  title="Github"
+                />
+                <img
+                  src={SpotifyLogo}
+                  alt="Spotify Logo"
+                  onClick={() =>
+                    window.open(
+                      'https://open.spotify.com/user/pnoig1591pjau15ah9ja412k6'
+                    )
+                  }
+                  title="Spotify"
+                />
+                <img
+                  src={YoutubeLogo}
+                  alt="Youtube Logo"
+                  onClick={() =>
+                    window.open(
+                      'https://www.youtube.com/channel/UCZOm0qLlSm19QyvAc_rsOmQ?view_as=subscriber'
+                    )
+                  }
+                  title="Youtube"
+                />
+              </SocialButtons>
+            )}
           </Content>
           {index === 1 && showResume && <ResumePage height={resumeHeight} />}
         </Wrapper>

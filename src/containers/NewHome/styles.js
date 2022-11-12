@@ -24,13 +24,22 @@ export const Main = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  transition: height 1s ease-in-out;
+  transition: 1s ease-in-out;
   height: ${({ height }) => height}vh;
   ${({ animationDelay }) =>
     animationDelay && `transition-delay: ${animationDelay}ms`};
 
   display: flex;
   flex-direction: column;
+  width: 525px;
+
+  // transition: left 1s ease;
+  // background: red;
+  position: absolute;
+  right: 0;
+  top: calc(50% - ${({ height }) => height / 2}vh);
+  bottom: 0;
+  left: ${({ isPaused }) => (isPaused ? `40px` : 'calc(50% - 260px)')};
 `;
 
 const WIDTHS = [-8, 41, 146, 256, 365];
@@ -76,7 +85,6 @@ export const Words = styled.div`
   position: relative;
   padding: 12px 8px 10px 8px;
   line-height: 1;
-  width: 525px;
   background: var(--dark-color);
   border-radius: 4px;
 
@@ -126,6 +134,8 @@ export const SocialButtons = styled.span`
     height: 40px;
     opacity: 0.9;
   }
+  position: absolute;
+  right: 0px;
 `;
 
 export const InfoBox = styled.div`
