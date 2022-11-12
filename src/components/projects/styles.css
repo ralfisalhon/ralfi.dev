@@ -1,0 +1,159 @@
+
+.base p {
+  color: var(--light-color);
+}
+
+.base a {
+  text-decoration-line: none;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.drop-glow {
+  filter: drop-shadow(0 0 0.75rem gray);
+}
+
+.round_icon {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  filter: drop-shadow(0 0 0.75rem #2f3640); 
+}
+
+.centertext {
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 5vw);
+  transform: translate(-50%, -50%);
+  opacity: 1 !important;
+}
+
+.centertext-mobile {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  overflow: hidden;
+}
+
+:root {
+  --size: 800px;
+}
+
+.base {
+  width: var(--size);
+  height: var(--size);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin-left: -135px;
+  margin-top: -380px;
+  position: absolute;
+  border-radius: 50%;
+  /* border: 1px solid white; */
+
+
+  animation-delay: -2s;
+  animation-name: spin;
+  animation-fill-mode: forwards;
+  /* animation-iteration-count: infinite; */
+  animation-timing-function: linear;
+
+  pointer-events: none;
+}
+
+.item {
+  position: absolute;
+  font-family: Arial;
+  font-size: 85px;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+
+  animation-delay: -2s;
+  animation-name: spin;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: reverse;
+
+  pointer-events: auto;
+}
+
+
+
+.base:hover .item {
+  /* animation-play-state: paused; */
+  opacity: 0.5;
+
+}
+
+.base:hover {
+  /* animation-play-state: paused; */
+}
+
+.item:hover {
+  opacity: 1 !important;
+  filter: drop-shadow(0 0 0.75rem gray);
+}
+
+.item-8 {
+  top: calc(50% - 50px);
+  left: calc(100% - 100px);
+}
+
+.item-6 {
+  top: 0px;
+  left: calc(50% - 50px);
+}
+
+.item-4 {
+  top: calc(50% - 54px);
+  left: 0px;
+}
+
+.item-2 {
+  top: calc(100% - 100px);
+  left: calc(50% - 54px);
+}
+
+.item-1 {
+  top: calc(84% - 75px);
+  left: calc(84% - 79px);
+}
+
+.item-3 {
+  top: calc(84% - 71px);
+  left: calc(16% - 33px);
+}
+
+.item-7 {
+  top: calc(16% - 33px);
+  left: calc(84% - 67px);
+}
+
+.item-5 {
+  top: calc(16% - 37px);
+  left: calc(16% - 33px);
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.footer-mobile {
+  display: flex;
+  flex-direction: row;
+  min-height: 35px;
+}

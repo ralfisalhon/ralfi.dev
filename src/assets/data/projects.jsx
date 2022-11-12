@@ -139,7 +139,7 @@ const PROJECTS = [
     wideSS: true,
   },
   {
-    name: 'CoverLove',
+    name: 'coverlove',
     logo: coverloveLogo,
     color: '#d35400',
     title: 'A simple tool to create new playlist cover art.',
@@ -168,20 +168,20 @@ const PROJECTS = [
     techs: ['React Native, Voximplant API, Google Speech-to-Text API, Twilio API'],
     contributors: 'Harun Kaneti, Eytan Nahmiyas',
   },
-  {
-    name: 'ClaimMate',
-    logo: claimmateLogo,
-    color: '#2c3e50',
-    title: 'Global Legal Hackathon 2019 finalist.',
-    // description: 'Done in 48 hours. I slept like 5 hours.',
-    awards: ['2nd Place, Global Legal Hackathon 2019'],
-    platforms: {
-      github: 'https://github.com/ralfisalhon/CLAIMate',
-      website: 'https://globallegalhackathon.com/',
-    },
-    video: 'https://www.youtube.com/embed/3uotkVSIglA',
-    techs: ['React Native'],
-  },
+  // {
+  //   name: 'ClaimMate',
+  //   logo: claimmateLogo,
+  //   color: '#2c3e50',
+  //   title: 'Global Legal Hackathon 2019 finalist.',
+  //   // description: 'Done in 48 hours. I slept like 5 hours.',
+  //   awards: ['2nd Place, Global Legal Hackathon 2019'],
+  //   platforms: {
+  //     github: 'https://github.com/ralfisalhon/CLAIMate',
+  //     website: 'https://globallegalhackathon.com/',
+  //   },
+  //   video: 'https://www.youtube.com/embed/3uotkVSIglA',
+  //   techs: ['React Native'],
+  // },
 ];
 
 export default PROJECTS;

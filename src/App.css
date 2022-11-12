@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:regular,bold,italic&subset=latin,latin-ext');
+
 * {
   padding: 0px;
   margin: 0px;
@@ -19,7 +21,7 @@ a {
 
 .text {
   color: black;
-  font-family: 'Avenir';
+  font-family: 'Montserrat';
   font-size: 18px;
 }
 
@@ -27,6 +29,7 @@ a {
   display: flex;
   width: 100vw;
   flex-direction: row;
+  scroll-behavior: smooth;
 }
 
 .content {
@@ -34,24 +37,37 @@ a {
   transition: 500ms ease-out;
   border: none;
   outline: none;
+  /* overflow: hidden; */
+  height: 100%;
 }
 
 .row {
   display: flex;
   flex-direction: row;
 }
+
+@keyframes fadeInOpacity {
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
 .fade-in {
   opacity: 1;
   animation-name: fadeInOpacity;
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
-  animation-duration: 1s;
+  animation-duration: 0.8s;
 }
 
 .disable-selection {
+  user-select: none;
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* Internet Explorer */
   -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
   -webkit-user-select: none; /* Chrome, Safari, and Opera */
   -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
+}
+
+body {
+  height: 100%;
 }
