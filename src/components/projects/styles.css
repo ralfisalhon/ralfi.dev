@@ -57,19 +57,7 @@
   /* border: 1px solid white; */
 
 
-  -webkit-animation-name: spin;
-  -webkit-animation-duration: var(--duration);
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-  -moz-animation-name: spin;
-  -moz-animation-duration: var(--duration);
-  -moz-animation-iteration-count: infinite;
-  -moz-animation-timing-function: linear;
-  -ms-animation-name: spin;
-  -ms-animation-duration: var(--duration);
-  -ms-animation-iteration-count: infinite;
-  -ms-animation-timing-function: linear;
-
+  animation-delay: -2.5s;
   animation-name: spin;
   animation-duration: var(--duration);
   animation-iteration-count: infinite;
@@ -86,22 +74,7 @@
   width: 100px;
   height: 100px;
 
-  -webkit-animation-name: spin;
-  -webkit-animation-duration: var(--duration);
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-direction: reverse;
-  -moz-animation-name: spin;
-  -moz-animation-duration: var(--duration);
-  -moz-animation-iteration-count: infinite;
-  -moz-animation-timing-function: linear;
-  -moz-animation-direction: reverse;
-  -ms-animation-name: spin;
-  -ms-animation-duration: var(--duration);
-  -ms-animation-iteration-count: infinite;
-  -ms-animation-timing-function: linear;
-  -ms-animation-direction: reverse;
-
+  animation-delay: -2.5s;
   animation-name: spin;
   animation-duration: var(--duration);
   animation-iteration-count: infinite;
@@ -112,17 +85,11 @@
 }
 
 .base:hover .item {
-  -webkit-animation-play-state: paused;
-  -moz-animation-play-state: paused;
-  -o-animation-play-state: paused;
   animation-play-state: paused;
   opacity: 0.5;
 }
 
 .base:hover {
-  -webkit-animation-play-state: paused;
-  -moz-animation-play-state: paused;
-  -o-animation-play-state: paused;
   animation-play-state: paused;
 }
 

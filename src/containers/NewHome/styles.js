@@ -33,7 +33,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
 `;
 
-const WIDTHS = [-8, 41, 146, 257, 365];
+const WIDTHS = [-8, 41, 146, 256, 365];
 export const Word = styled.div`
   color: var(--light-color);
   ${({ selected, color }) => selected && `color: ${color}`};
