@@ -1,31 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "87db642e793b0a098fdf06b5ebda2ad5",
+    "revision": "f53891aef89044d388ecccdcf45ff267",
     "url": "/index.html"
   },
   {
-    "revision": "f752c6dab9fc7c24e9f7",
-    "url": "/static/css/main.0b27cddd.chunk.css"
+    "revision": "39f408e5db2db8c1f1f2",
+    "url": "/static/css/main.40daa0de.chunk.css"
   },
   {
-    "revision": "ffeecdccde2f815e28dd",
-    "url": "/static/js/2.04dbb93d.chunk.js"
+    "revision": "1da9b6f14c1e43de2433",
+    "url": "/static/js/2.40c9d08f.chunk.js"
   },
   {
-    "revision": "128fd55294f4af35ede9e68914563108",
-    "url": "/static/js/2.04dbb93d.chunk.js.LICENSE.txt"
+    "revision": "0b08544f54c9906705be39c03b7e79ad",
+    "url": "/static/js/2.40c9d08f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f752c6dab9fc7c24e9f7",
-    "url": "/static/js/main.22770636.chunk.js"
+    "revision": "39f408e5db2db8c1f1f2",
+    "url": "/static/js/main.4cf6b22d.chunk.js"
   },
   {
-    "revision": "1edaea2c29ed5235eccd",
-    "url": "/static/js/runtime-main.4b850588.js"
+    "revision": "73f32ffdd573f22da08c",
+    "url": "/static/js/runtime-main.29cb7ac8.js"
   },
   {
-    "revision": "7270c5c6208361d59122542ab4d385da",
-    "url": "/static/media/RRS_Resume_Feb_2022.7270c5c6.pdf"
+    "revision": "afd59568cc22678861198386f5def69a",
+    "url": "/static/media/RRS_Resume_June_2023.afd59568.pdf"
   },
   {
     "revision": "4b8e44b565700eb866af27cd3de78b9f",
@@ -136,16 +136,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/jamblr.a1b95cdc.png"
   },
   {
-    "revision": "2eb7b21590f6c83deec9f3dacd3fe1e9",
-    "url": "/static/media/leftarrow.2eb7b215.png"
-  },
-  {
     "revision": "246c4e83bedf5f15910cf63efa0afe84",
     "url": "/static/media/linkedin.246c4e83.svg"
-  },
-  {
-    "revision": "a670002bdd4211b32c52c7bf3ecc9f65",
-    "url": "/static/media/magglass.a670002b.png"
   },
   {
     "revision": "e4e3e0852724fc62c7cf4311f151781e",
