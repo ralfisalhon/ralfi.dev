@@ -75,6 +75,11 @@ export const SocialButtons = styled.span`
 
 export const RefreshContainer = styled.div`
   margin: 10px 0px;
+
+  img {
+    height: 20px;
+    width: 20px;
+  }
 `;
 
 export const InfoWrapper = styled.div`
