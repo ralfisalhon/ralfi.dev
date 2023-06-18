@@ -38,8 +38,12 @@ export const Fun = ({ lightMode, bgColor, fgColor }) => {
       >
         3.14{PI.substr(4, length)}
       </PIWrapper>
-      <p>{'> '}I am the World's Fastest Smartphone Typer</p>
-      <AlphabetRecord lightMode={lightMode} bgColor={bgColor} fgColor={fgColor} />
+      <p>{'> '}In 2020, I was the World's Fastest Smartphone Typer</p>
+      <AlphabetRecord
+        lightMode={lightMode}
+        bgColor={bgColor}
+        fgColor={fgColor}
+      />
       <p>{'> '}I've been playing the piano for over 15 years</p>
       <p>
         Here's me playing at{' '}

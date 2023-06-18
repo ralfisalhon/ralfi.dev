@@ -5,7 +5,7 @@ import {
   ButtonWrapper,
   Button,
   SocialButtons,
-  RefreshContainer,
+  // RefreshContainer,
   InfoWrapper,
   Projects,
   Resume,
@@ -23,11 +23,11 @@ import YoutubeLogo from 'assets/svg/youtube.svg';
 import GithubLogo from 'assets/svg/github.svg';
 import SpotifyLogo from 'assets/svg/spotify.svg';
 
-import RefreshLogo from 'assets/svg/refresh.svg';
-import SunLogo from 'assets/svg/sun.svg';
+// import RefreshLogo from 'assets/svg/refresh.svg';
+// import SunLogo from 'assets/svg/sun.svg';
 
 import PROJECTS from 'assets/data/projects';
-import RESUME from 'assets/pdf/RRS_Resume_Sep_2020.pdf';
+import RESUME from 'assets/pdf/RRS_Resume_June_2023.pdf';
 
 import { Fun } from 'components/Fun';
 
@@ -60,14 +60,16 @@ const getRandomNumber = (min, max) => {
 };
 
 export const Home = () => {
+  const [lightMode, setLightMode] = useState(false);
+  // const [pressed, setPressed] = useState(false);
+  const [randNumber, setRandNumber] = useState(
+    getRandomNumber(0, COLORS.length - 1)
+  );
   const [color, setColor] = useState(COLORS[0]);
-  const [lightMode, setLightMode] = useState(true);
-  const [pressed, setPressed] = useState(false);
-  const [randNumber, setRandNumber] = useState(getRandomNumber(0, COLORS.length - 1));
   const [selected, setSelected] = useState();
   const [selectedProj, setSelectedProj] = useState();
 
-  const handleKeyPress = (e) => {
+  const handleKeyPress = e => {
     e.persist();
     if (e.key === ' ') {
       setLightMode(!lightMode);
@@ -75,15 +77,16 @@ export const Home = () => {
   };
 
   const handleRefresh = useCallback(() => {
-    setPressed(true);
-    setTimeout(() => setPressed(false), 250);
+    // setPressed(true);
+    // setTimeout(() => setPressed(false), 250);
     let newRand = randNumber;
-    while (newRand === randNumber) newRand = getRandomNumber(0, COLORS.length - 1);
+    while (newRand === randNumber)
+      newRand = getRandomNumber(0, COLORS.length - 1);
     setRandNumber(newRand);
     setColor(COLORS[newRand]);
   }, [randNumber]);
 
-  const handleSelectedTab = (id) => {
+  const handleSelectedTab = id => {
     if (selected === id) {
       setSelected(null);
     } else {
@@ -91,12 +94,14 @@ export const Home = () => {
     }
   };
 
+  console.log({ color, selectedProj });
+
   if (!color) return null;
   return (
     <div onKeyPress={handleKeyPress} tabIndex="0" style={{ outline: 'none' }}>
       <Wrapper fgColor={color.fg} bgColor={color.bg} lightMode={lightMode}>
         <Splash>
-          <RefreshContainer>
+          {/* <RefreshContainer>
             <img
               className={`pointer rotate ${pressed ? 'down' : ''}`}
               src={RefreshLogo}
@@ -109,10 +114,13 @@ export const Home = () => {
               className="pointer"
               onClick={() => setLightMode(!lightMode)}
             />
-          </RefreshContainer>
+          </RefreshContainer> */}
           <h1>Ralfi Salhon</h1>
           <ButtonWrapper>
-            <Button selected={selected === 'resume'} onClick={() => handleSelectedTab('resume')}>
+            <Button
+              selected={selected === 'resume'}
+              onClick={() => handleSelectedTab('resume')}
+            >
               Resume
             </Button>
             <p> / </p>
@@ -126,18 +134,31 @@ export const Home = () => {
               Projects
             </Button>
             <p> / </p>
-            <Button selected={selected === 'contact'} onClick={() => handleSelectedTab('contact')}>
+            <Button
+              selected={selected === 'contact'}
+              onClick={() => handleSelectedTab('contact')}
+            >
               Contact
             </Button>
             <p> / </p>
-            <div onMouseEnter={() => handleRefresh()} onClick={() => setLightMode(false)}>
-              <Button selected={selected === 'fun'} onClick={() => handleSelectedTab('fun')}>
+            <div
+              onMouseEnter={() => handleRefresh()}
+              onClick={() => setLightMode(false)}
+            >
+              <Button
+                selected={selected === 'fun'}
+                onClick={() => handleSelectedTab('fun')}
+              >
                 Fun
               </Button>
             </div>
           </ButtonWrapper>
           {selected && (
-            <InfoWrapper fgColor={color.fg} bgColor={color.bg} lightMode={lightMode}>
+            <InfoWrapper
+              fgColor={color.fg}
+              bgColor={color.bg}
+              lightMode={lightMode}
+            >
               {selected === 'resume' && (
                 <Resume lightMode={lightMode}>
                   <p>
@@ -153,14 +174,23 @@ export const Home = () => {
               {selected === 'projects' && (
                 <>
                   <Projects lightMode={lightMode}>
-                    {PROJECTS?.map((proj) => (
+                    {PROJECTS?.map(proj => (
                       <p
                         key={proj.name}
                         style={{
-                          color: proj.color,
-                          fontWeight: selectedProj?.name === proj.name ? '900' : '400',
+                          // color:
+                          //   (lightMode || selectedProj?.name === proj.name) &&
+                          //   color.bg !== proj.color
+                          //     ? proj.color
+                          //     : undefined,
+                          cursor: 'pointer',
+                          fontWeight:
+                            selectedProj?.name === proj.name ? '900' : '400',
                         }}
-                        onClick={() => setSelectedProj(proj)}
+                        onClick={() => {
+                          setColor(color => ({ ...color, bg: proj.color }));
+                          setSelectedProj(proj);
+                        }}
                       >
                         {proj.name}
                       </p>
@@ -169,6 +199,7 @@ export const Home = () => {
                   {selectedProj && (
                     <SelectedProj>
                       <HeaderRow>
+                        <p>{selectedProj.name}</p>
                         {!IS_MOBILE && (
                           <Logo>
                             <img src={selectedProj.logo} alt="logo" />
@@ -176,7 +207,7 @@ export const Home = () => {
                         )}
                         <div>
                           <Awards>
-                            {selectedProj?.awards?.map((award) => (
+                            {selectedProj?.awards?.map(award => (
                               <span key={award}>
                                 <p>
                                   {'🏆'} {award}
@@ -185,21 +216,23 @@ export const Home = () => {
                             ))}
                           </Awards>
                           <ProjLinks color={color.bg}>
-                            {Object.keys(selectedProj.platforms).map((platform) => (
-                              <a
-                                key={platform}
-                                href={selectedProj.platforms[platform]}
-                                rel="noopener noreferrer"
-                                target="_blank"
-                              >
-                                {PLATFORM_CONVERSIONS[platform]}
-                              </a>
-                            ))}
+                            {Object.keys(selectedProj.platforms).map(
+                              platform => (
+                                <a
+                                  key={platform}
+                                  href={selectedProj.platforms[platform]}
+                                  rel="noopener noreferrer"
+                                  target="_blank"
+                                >
+                                  {PLATFORM_CONVERSIONS[platform]}
+                                </a>
+                              )
+                            )}
                           </ProjLinks>
                         </div>
                       </HeaderRow>
                       <ProjScreenshots>
-                        {selectedProj.screenshots?.map((screenshot) => (
+                        {selectedProj.screenshots?.map(screenshot => (
                           <img
                             key={screenshot}
                             alt="Project Screenshot"
@@ -213,7 +246,11 @@ export const Home = () => {
 
                       <ProjVideo>
                         {selectedProj?.video && (
-                          <iframe title="video" src={selectedProj?.video} frameBorder="0" />
+                          <iframe
+                            title="video"
+                            src={selectedProj?.video}
+                            frameBorder="0"
+                          />
                         )}
                       </ProjVideo>
                     </SelectedProj>
@@ -223,13 +260,19 @@ export const Home = () => {
               {selected === 'contact' && (
                 <center>
                   <p>
-                    <a href="mailto:ralfisalhon@gmail.com">ralfisalhon@gmail.com</a>
+                    <a href="mailto:ralfisalhon@gmail.com">
+                      ralfisalhon@gmail.com
+                    </a>
                   </p>
                 </center>
               )}
               {selected === 'fun' && (
                 <span>
-                  <Fun lightMode={lightMode} bgColor={color.bg} fgColor={color.fg} />
+                  <Fun
+                    lightMode={lightMode}
+                    bgColor={color.bg}
+                    fgColor={color.fg}
+                  />
                 </span>
               )}
             </InfoWrapper>
@@ -238,7 +281,9 @@ export const Home = () => {
             <img
               src={LinkedInLogo}
               alt="LinkedIn Logo"
-              onClick={() => window.open('https://www.linkedin.com/in/ralfisalhon/')}
+              onClick={() =>
+                window.open('https://www.linkedin.com/in/ralfisalhon/')
+              }
             />
             <img
               src={GithubLogo}
@@ -248,7 +293,11 @@ export const Home = () => {
             <img
               src={SpotifyLogo}
               alt="Spotify Logo"
-              onClick={() => window.open('https://open.spotify.com/user/pnoig1591pjau15ah9ja412k6')}
+              onClick={() =>
+                window.open(
+                  'https://open.spotify.com/user/pnoig1591pjau15ah9ja412k6'
+                )
+              }
             />
             <img
               src={YoutubeLogo}
