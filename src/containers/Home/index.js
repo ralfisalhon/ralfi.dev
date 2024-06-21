@@ -27,7 +27,7 @@ import SpotifyLogo from 'assets/svg/spotify.svg';
 // import SunLogo from 'assets/svg/sun.svg';
 
 import PROJECTS from 'assets/data/projects';
-import RESUME from 'assets/pdf/RRS_Resume_June_2023.pdf';
+import RESUME from 'assets/pdf/RRS_Resume_June_2024.pdf';
 
 import { Fun } from 'components/Fun';
 
