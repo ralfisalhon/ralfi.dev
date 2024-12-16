@@ -38,7 +38,7 @@ export const Fun = ({ lightMode, bgColor, fgColor }) => {
       >
         3.14{PI.substr(4, length)}
       </PIWrapper>
-      <p>{'> '}In 2020, I was the World's Fastest Smartphone Typer</p>
+      <p>{'> '}In 2019, I was the World's Fastest Smartphone Typer</p>
       <AlphabetRecord
         lightMode={lightMode}
         bgColor={bgColor}
@@ -66,7 +66,7 @@ export const Fun = ({ lightMode, bgColor, fgColor }) => {
         >
           14 years
         </a>{' '}
-        old. I mostly do classical nowadays.
+        old. I like playing classical nowadays!
       </p>
     </Wrapper>
   );
